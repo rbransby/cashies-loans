@@ -1,0 +1,44 @@
+const webpackConfig = require('./webpack.config');
+const _ = require('lodash');
+
+const PATHS = {
+  src:        'src',
+  dist:       'dist',
+  scripts:    'src/js',
+  styles:     'src/scss',
+  data:       'src/data',
+  icons:      'src/icons',
+  fonts:      'src/fonts',
+  images:     'src/images',
+  layouts:    'src/templates/layouts',
+  pages:      'src/templates/pages',
+  partials:   'src/templates/partials',
+  helpers:    'src/templates/helpers'
+};
+
+module.exports = {
+  paths: _.extend({}, PATHS),
+  webpack: {
+    dev:        webpackConfig.dev,
+    prod:       webpackConfig.prod
+  },
+  sass: {
+    dev: {
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['./node_modules'],
+      sourcemaps: true
+    },
+    prod: {
+      outputStyle: 'compressed',
+      precision: 10,
+      includePaths: ['./node_modules']
+    },
+    autoprefixer: {
+      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
+    }
+  },
+  panini: {
+
+  }
+};

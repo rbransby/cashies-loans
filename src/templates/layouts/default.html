@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="en-au">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{content.meta.title}}</title>
+    <meta name="description" content="{{content.meta.description}}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta property="og:url" content="{{content.meta.url}}" />
+    <meta property="og:type" content="{{content.meta.type}}" />
+    <meta property="og:title" content="{{content.meta.title}}" />
+    <meta property="og:description" content="{{content.meta.description}}" />
+    <meta property="og:image" content="{{content.meta.image}}" />
+
+    <link rel="stylesheet" href="css/main.css?v={{cache-bust}}">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="http://beokinawa-pr.jp/life/favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TB5H97X');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body>
+
+    <div id="okapp" class="container" v-bind:class="[page, ui]">
+      {{> body}}
+    </div>
+
+
+    <script type="text/javascript">
+      window.createjs = {};
+    </script>
+
+    <script src="js/vendor.js?v={{cache-bust}}"></script>
+    <script src="js/main.js?v={{cache-bust}}"></script>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB5H97X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function() {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-87987344-1', 'auto');
+        ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-583293e0d02c5798"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+// bower:scss
+// endbower
+@import "normalize-scss/sass/normalize";
+@include normalize();
+
+@import "general/settings";
+@import "general/mixins";
+@import "general/animations";
+@import "general/base";

@@ -1,0 +1,51 @@
+html {
+  background-color: rgb(201,239,241);
+}
+body {
+  color: white;
+  font-family: 'NantesWeb';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;/* optimize font in firefox */
+  -webkit-font-smoothing: antialiased;/* apply font anti-aliasing */
+  text-rendering: optimizeLegibility;/* firefox counts readability more than display speed */
+}
+
+.logo {
+  position: absolute;
+  right: 3%;
+  bottom: 8%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+
+  .showNav & {
+    opacity: 1;
+  }
+
+  .home-page & {
+    transition-delay: 1s;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+.hasPreloaded {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+a {
+  color: $darkBlue;
+  transition: color 0.5s ease;
+
+  &:focus,
+  &:visited,
+  &:hover {
+    color: #000;
+  }
+}
