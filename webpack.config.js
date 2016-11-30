@@ -7,13 +7,7 @@ const base = {
     vendor: [
       'es6-promise/auto',
       'jquery',
-      'vue',
-      'vuex',
-      'vue-router',
       'lodash',
-      'paper',
-      'gsap',
-      'preloadjs',
       'lory.js',
       'hammerjs',
       'js-cookie'
@@ -25,8 +19,7 @@ const base = {
   devtool: 'source-map',
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.js',
-      'preloadjs$': 'createjs-preloadjs/lib/preloadjs-0.6.2.combined.js'
+      // 'LIB_NAME$': 'DESTINATION',
     }
   },
   module: {
@@ -38,10 +31,6 @@ const base = {
         query: {
           presets: ['es2015']
         }
-      },
-      {
-        test: /\.html$/,
-        loader: 'html'
       }
     ]
   }
