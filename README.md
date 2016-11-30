@@ -1,5 +1,5 @@
-# Be Okinawa
-Be Okinawa tourism website designed to sell Okinawa as a prime tourist destination and provide a single location for the campaign material to be accessible.
+# Isobar Boilerplate
+A starter base for new projects of all sizes. From single page apps, to large CMS driven projects.
 
 ## Getting Started
 Pull this repo to your local and run the following.
