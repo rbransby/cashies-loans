@@ -1,14 +1,23 @@
 // grid visualizer
-$visual-grid: true;
-$visual-grid-color: #eee;
-$visual-grid-opacity: 0.3;
+// $visual-grid: true;
+// $visual-grid-color: #eee;
+// $visual-grid-opacity: 0.3;
 
 @import "normalize-scss/sass/normalize";
 @include normalize();
-@import "bourbon";
-@import "./general/grid_settings";
-@import "neat";
-@import "neat-helpers";
+
+@import "general/foundation_settings";
+
+@import 'foundation-sites/scss/util/util';
+@import 'foundation-sites/scss/global';
+@import 'foundation-sites/scss/grid/grid';
+@include foundation-global-styles;
+@include foundation-grid;
+
+// @import "bourbon";
+// @import "./general/grid_settings";
+// @import "neat";
+// @import "neat-helpers";
 
 @import "general/settings";
 @import "general/mixins";
@@ -29,7 +38,17 @@ h1 {
   padding-top: 60px;
 }
 .grid {
-  padding: 50px 0;
+  padding: 30px 0;
+}
+.row {
+  background-color: #eee;
+}
+.columns {
+  text-align: center;
+  & > div {
+    background-color: #ccc;
+    padding: 50px 0;
+  }
 }
 body {
   // background-color: #f00;
