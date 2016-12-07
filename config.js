@@ -26,7 +26,11 @@ module.exports = {
     dev: {
       outputStyle: 'expanded',
       precision: 10,
-      includePaths: ['./node_modules'],
+      includePaths: [
+        './node_modules',
+        require('bourbon').includePaths,
+        require('bourbon-neat').includePaths
+      ],
       sourcemaps: true
     },
     prod: {

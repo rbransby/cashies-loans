@@ -6,11 +6,17 @@ const localtunnel =       require('localtunnel');
 const config =            require('../config');
 
 module.exports = (gulp, options) => {
+  // intermediary to reload browser on hbs html change
+  gulp.task('hbs-watch', ['panini'], (done) => {
+    browserSync.reload();
+    done();
+  });
+
   return () => {
     runSequence(['clean'], [`styles:${options.env}`, `scripts:${options.env}`, 'panini', 'extras', 'images'], () => {
       browserSync({
         notify: false,
-        port: 3000,
+        port: 3003,
         server: {
           baseDir: [config.paths.dist],
           routes: {}
@@ -33,7 +39,7 @@ module.exports = (gulp, options) => {
       gulp.watch([
         `${config.paths.data}/**/*`,
         `${config.paths.src}/templates/**/*`
-      ], ['panini', 'extras']);
+      ], ['hbs-watch', 'extras']);
       gulp.watch(`${config.paths.styles}/**/*.scss`, [`styles:${options.env}`]);
       gulp.watch(`${config.paths.scripts}/**/*`, [`scripts:${options.env}`]);
     });

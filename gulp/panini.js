@@ -13,7 +13,6 @@ module.exports = (gulp) => {
         data      : config.paths.data,
         helpers   : config.paths.helpers,
       }))
-      .pipe(gulp.dest(config.paths.dist))
-      .pipe(browserSync.reload({stream: true}));
+      .pipe(gulp.dest(config.paths.dist));
   };
 };

@@ -1,0 +1,50 @@
+// grid visualizer
+$visual-grid: true;
+$visual-grid-color: #eee;
+$visual-grid-opacity: 0.3;
+
+@import "normalize-scss/sass/normalize";
+@include normalize();
+@import "bourbon";
+@import "./general/grid_settings";
+@import "neat";
+@import "neat-helpers";
+
+@import "general/settings";
+@import "general/mixins";
+@import "atoms/grid";
+
+.grid {
+  text-align: center;
+
+}
+[class^='grid-col-'], [class*=' -col-'] {
+  background-color: rgba(0,0,0,0.1);
+  padding: 20px 0
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding-top: 60px;
+}
+.grid {
+  padding: 50px 0;
+}
+body {
+  // background-color: #f00;
+  // // @include media($mobile) {
+  // // }
+  // @include media($tablet) {
+  //   background-color: #0f0;
+  //
+  // }
+  // @include media($desktop) {
+  //   background-color: #00f;
+  //
+  // }
+  // @include media($large) {
+  //   background-color: #0Ff;
+  //
+  // }
+}
