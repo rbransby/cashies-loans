@@ -2,11 +2,8 @@
 // $visual-grid: true;
 // $visual-grid-color: #eee;
 // $visual-grid-opacity: 0.3;
-
 @import "normalize-scss/sass/normalize";
-@include normalize();
-
-@import "general/foundation_settings";
+@import "general/settings_foundation";
 
 @import 'foundation-sites/scss/util/util';
 @import 'foundation-sites/scss/global';
@@ -38,31 +35,87 @@ h1 {
   padding-top: 60px;
 }
 .grid {
-  padding: 30px 0;
-}
-.row {
-  background-color: #eee;
-}
-.columns {
-  text-align: center;
-  & > div {
-    background-color: #ccc;
-    padding: 50px 0;
+  @include g-unit(padding-top, 1);
+  @include g-unit(padding-bottom, 1);
+  .row {
+    background-color: #E7E5DF;
+    @include g-unit(padding, 0.5);
+    @include g-unit(padding, 0.5);
+
+    @include breakpoint(large) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .columns {
+    text-align: center;
+    position: relative;
+    @include g-unit(margin-top, 0.5);
+    @include g-unit(margin-bottom, 0.5);
+    // border-color: red;
+    // border-style: solid;
+
+    & > div {
+      background-color: #D3D0CB;
+      padding: 40px 0;
+    }
+    background-color: #44BBA4;
+
+
+    &:before,
+    &:after {
+      content: '';
+      font-size: 10px;
+      text-transform: uppercase;
+      display: block;
+      width: 100%;
+      position: absolute;
+      @include g-unit(height, 0.5);
+      left: 0;
+      opacity: 0.15;
+      // border: 1px solid rgba(255,255,255,0.3);
+
+    }
+    &:before {
+      top: 0;
+      @include g-unit(margin-top, -0.5);
+      background-color: #2C7769;
+    }
+    &:after {
+      bottom: 0;
+      background-color: #2C7769;
+
+      @include g-unit(margin-bottom, -0.5);
+    }
+
+    &:nth-child(odd) {
+      background-color: #D8B411;
+      &:before {
+        background-color: #8A730B;
+      }
+      &:after {
+        background-color: #8A730B;
+      }
+    }
   }
 }
+.buttons {
+  text-align: center;
+}
+
 body {
   // background-color: #f00;
   // // @include media($mobile) {
   // // }
-  // @include media($tablet) {
+  // @include breakpoint(medium) {
   //   background-color: #0f0;
   //
   // }
-  // @include media($desktop) {
+  // @include breakpoint(large) {
   //   background-color: #00f;
   //
   // }
-  // @include media($large) {
+  // @include breakpoint(xlarge) {
   //   background-color: #0Ff;
   //
   // }

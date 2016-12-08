@@ -1,7 +1,7 @@
 {
-  "name": "be-okinawa",
+  "name": "isobar boilerplate",
   "version": "1.0.0",
-  "description": "Be Okinawa tourism website",
+  "description": "framework to start a new web project",
   "private": true,
   "engines": {
     "node": ">=4"
