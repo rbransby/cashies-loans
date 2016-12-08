@@ -24,8 +24,10 @@
 
 
 .grid-guide {
-  @include g-unit(padding-top, 1);
-  @include g-unit(padding-bottom, 1);
+  & > div {
+    @include g-unit(padding-top, 1);
+    @include g-unit(padding-bottom, 1);
+  }
   .row {
     background-color: #E7E5DF;
     @include g-unit(padding, 0.5);
