@@ -97,7 +97,15 @@
 .buttons {
   text-align: center;
 }
-
+.page-title {
+  text-align: center;
+}
+.nav {
+  &__link {
+    display: inline;
+    margin-right: 20px;
+  }
+}
 body {
   // background-color: #f00;
   // // @include media($mobile) {
