@@ -1,6 +1,6 @@
 @import 'foundation-sites/scss/util/util';
 
-$global-width: rem-calc(1600);
+$global-width: rem-calc(1800);
 
 // 2. Breakpoints
 // --------------
@@ -26,5 +26,13 @@ $grid-column-gutter: (
   medium: 40px,
   large: 40px,
 );
+
+// round
+$spacing-gutter: (
+  small: 10px,
+  medium: 20px,
+  large: 30px,
+);
+
 $grid-column-align-edge: false;
 $block-grid-max: 8;

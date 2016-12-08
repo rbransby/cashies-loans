@@ -8,3 +8,13 @@
     }
   }
 }
+
+@mixin space-unit($prop, $val, $ignore...) {
+  @each $breakpoint, $gutter in $spacing-gutter {
+    @if not index($ignore, $breakpoint) {
+      @include breakpoint($breakpoint) {
+        #{$prop}: $val * $gutter;
+      }
+    }
+  }
+}
