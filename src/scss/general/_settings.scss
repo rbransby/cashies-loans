@@ -1,19 +1,53 @@
 //// Colours  ////////
-$cyan:               #13B8D7;
-$red:                #E9464C;
-$lilipod:            #51BBB4;
-$yellow:             #F8C630;
-$darkBlue:           #354d51;
+$colour-key: 'base' !default;
 
-$c1:                 #E9464C;
-$c2:                 #13B8D7;
-$c3:                 #51BBB4;
-$c4:                 #F8C630;
-$c5:                 #354d51;
+$colours: (
+  'primary': (
+    'base': #273043,
+    'light': #4E5565,
+    'dark': #1D2331
+  ),
+  'secondary': (
+    'base': #4AC9C7,
+    'light': #8BDCDB,
+    'dark': #369391
+  ),
+  'tertiary': (
+    'base': #C2401D,
+    'light': #F06D4B,
+    'dark': #822A14
+  ),
+  'accent': (
+    'base': #FFDA61,
+    'light': #FFE284,
+    'dark': #E8BF3A
+  ),
+  'fore': (
+    'base': #191919,
+    'light': #333333,
+    'dark': #111111
+  ),
+  'back': (
+    'base': #DDDDDD,
+    'light': #EEEEEE,
+    'dark': #CCCCCC
+  )
+);
+
+$colour-opacity: (
+  'light': 0.8, // opacity used with lighter colors
+  'dark': 0.4,  // opacity used with darker colors
+);
 
 //// Fonts  ////////
 $fontNantes:         'NantesWeb';
 $fontKarla:          'Karla', sans-serif;
 
-//// Sizing  ////////
-$mobileMinHeight:    320px;
+//// Buttons  ////////
+$button-padding: 15px 25px;
+$button-sizes: (
+  small: 12px,
+  default: 16px,
+  large: 20px,
+  xlarge: 24px,
+)

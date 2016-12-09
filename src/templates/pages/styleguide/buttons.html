@@ -5,11 +5,63 @@ title: Buttons
 
 <div class="buttons">
   <div class="row">
-    <div class="small-12 medium-6 columns">
+    <div class="small-12 columns">
+      <h2>Primary</h2>
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button--large"}}
+    </div>
+
+    <div class="buttons-item small-12 medium-4 columns">
       {{> button action="true" text="button"}}
     </div>
-    <div class="small-12 medium-6 columns">
-      {{> button action="true" text="button"}}
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button--small"}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Secondary</h2>
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-secondary  button--large"}}
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-secondary "}}
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-secondary button--small"}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Tertiary</h2>
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-tertiary  button--large"}}
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-tertiary "}}
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-tertiary button--small"}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Full width</h2>
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-primary button--full"}}
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-secondary button--full "}}
+    </div>
+    <div class="buttons-item small-12 medium-4 columns">
+      {{> button action="true" text="button" classes="button-tertiary  button--full"}}
     </div>
   </div>
 </div>

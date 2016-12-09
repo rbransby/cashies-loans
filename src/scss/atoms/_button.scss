@@ -1,3 +1,50 @@
 .button {
-  padding: 10px 20px;
+  color: white;
+  text-transform: uppercase;
+  padding: $button-padding;
+  background-color: get-colour('primary');
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: get-colour('primary', 'light');
+  }
+
+  &-secondary {
+    background-color: get-colour('secondary');
+
+    &:hover {
+      background-color: get-colour('secondary', 'light');
+    }
+  }
+
+  &-tertiary {
+    background-color: get-colour('tertiary');
+
+    &:hover {
+      background-color: get-colour('tertiary', 'light');
+    }
+  }
+
+  &-accent {
+    background-color: get-colour('accent');
+
+    &:hover {
+      background-color: get-colour('accent', 'light');
+    }
+  }
+
+  &--small {
+    font-size: 10px;
+    padding: 10px 10px;
+  }
+  &--large {
+    font-size: 20px;
+    padding: 15px 25px;
+  }
+  &--full {
+    display: block;
+    width: 100%;
+  }
+
 }

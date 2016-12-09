@@ -1,21 +1,4 @@
-@import "normalize-scss/sass/normalize";
-@import "general/settings_foundation";
-
-@import 'foundation-sites/scss/util/util';
-@import 'foundation-sites/scss/global';
-@import 'foundation-sites/scss/grid/grid';
-@include foundation-global-styles;
-@include foundation-grid;
-// @include normalize(); // foundation calls normalise
-
-// @import "bourbon";
-// @import "./general/grid_settings";
-// @import "neat";
-// @import "neat-helpers";
-
-@import "general/settings";
-@import "general/mixins";
-@import "atoms/grid";
+@import "main";
 
 [class^='grid-col-'], [class*=' -col-'] {
   background-color: rgba(0,0,0,0.1);
@@ -29,7 +12,7 @@
     @include g-unit(padding-bottom, 1);
   }
   .row {
-    background-color: #E7E5DF;
+    background-color: get-colour('back', 'light');
     @include g-unit(padding, 0.5);
     @include g-unit(padding, 0.5);
 
@@ -47,10 +30,10 @@
     // border-style: solid;
 
     & > div {
-      background-color: #D3D0CB;
+      background-color: get-colour('back');
       padding: 40px 0;
     }
-    background-color: #44BBA4;
+    background-color: get-colour('secondary');
 
 
     &:before,
@@ -70,24 +53,35 @@
     &:before {
       top: 0;
       @include g-unit(margin-top, -0.5);
-      background-color: #2C7769;
+      background-color: get-colour('secondary', 'dark');
     }
     &:after {
       bottom: 0;
-      background-color: #2C7769;
+      background-color: get-colour('secondary', 'dark');
 
       @include g-unit(margin-bottom, -0.5);
     }
 
     &:nth-child(odd) {
-      background-color: #D8B411;
+      background-color: get-colour('accent');
       &:before {
-        background-color: #8A730B;
+        background-color: get-colour('accent', 'dark');
       }
       &:after {
-        background-color: #8A730B;
+        background-color: get-colour('accent', 'dark');
       }
     }
+  }
+}
+.colours {
+  &-item {
+    padding: 70px 0;
+    color: white;
+    text-align: center;
+  }
+  .row {
+    @include space-unit(margin-bottom, 2);
+
   }
 }
 .u-tc {
@@ -95,7 +89,10 @@
 }
 
 .buttons {
-  text-align: center;
+  // text-align: center;
+  &-item {
+    @include space-unit(margin-bottom, 2);
+  }
 }
 .page-title {
   text-align: center;
@@ -105,21 +102,4 @@
     display: inline;
     margin-right: 20px;
   }
-}
-body {
-  // background-color: #f00;
-  // // @include media($mobile) {
-  // // }
-  // @include breakpoint(medium) {
-  //   background-color: #0f0;
-  //
-  // }
-  // @include breakpoint(large) {
-  //   background-color: #00f;
-  //
-  // }
-  // @include breakpoint(xlarge) {
-  //   background-color: #0Ff;
-  //
-  // }
 }

@@ -1,10 +1,20 @@
-// bower:scss
-// endbower
+// Frameworks
 @import "normalize-scss/sass/normalize";
-@import "neat";
-@include normalize();
+@import "general/settings_foundation";
+@import 'foundation-sites/scss/util/util';
+@import 'foundation-sites/scss/global';
+@import 'foundation-sites/scss/grid/grid';
+@include foundation-global-styles;
+@include foundation-grid;
 
+// General
 @import "general/settings";
+@import "general/functions";
 @import "general/mixins";
 @import "general/animations";
 @import "general/base";
+
+// Atoms
+@import "atoms/grid";
+@import "atoms/button";
+@import "atoms/colour";
