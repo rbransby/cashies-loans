@@ -1,11 +1,15 @@
 @import "main";
+@import "molecules/style-nav";
 
 [class^='grid-col-'], [class*=' -col-'] {
   background-color: rgba(0,0,0,0.1);
   padding: 20px 0
 }
 
-
+body.show-menu {
+  overflow: hidden;
+  padding-top: 100px;
+}
 .grid-guide {
   & > div {
     @include g-unit(padding-top, 1);

@@ -15,8 +15,9 @@ module.exports = (gulp, options) => {
   return () => {
     runSequence(['clean'], [`styles:${options.env}`, `scripts:${options.env}`, 'panini', 'extras', 'images'], () => {
       browserSync({
+        startPath: '/styleguide/',
         notify: false,
-        port: 3003,
+        port: 3000,
         server: {
           baseDir: [config.paths.dist],
           routes: {}

@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
 h1, h2, h3, h4, h5 {
-  font-family:'NantesWeb';
-  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   line-height: 1;
   margin: 20px 0;
 }
@@ -11,13 +19,7 @@ h3 {
 h4 {
   font-size: 20px;
 }
-p, strong, span, ul, ol, a {
-  font-family: 'Karla', sans-serif;
-  font-weight: 100;
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0;
-}
+
 strong {
   font-weight: 600;
 }
