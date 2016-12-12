@@ -1,7 +1,11 @@
 .button {
   color: white;
   text-transform: uppercase;
-  padding: $button-padding;
+  // padding: $button-padding;
+  padding: map-get($button-padding, default);
+  font-size: map-get($button-sizes, default);
+  text-align: center;
+  text-decoration: none;
   background-color: get-colour('primary');
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -34,17 +38,23 @@
     }
   }
 
-  &--small {
-    font-size: 10px;
-    padding: 10px 10px;
-  }
-  &--large {
-    font-size: 20px;
-    padding: 15px 25px;
-  }
   &--full {
     display: block;
     width: 100%;
   }
+
+  // Sizes
+   @each $size, $value in map-remove($button-sizes, default) {
+     &--#{$size} {
+       font-size: $value;
+     }
+   }
+
+  // Paddings
+   @each $size, $value in map-remove($button-padding, default) {
+     &--#{$size} {
+       padding: $value;
+     }
+   }
 
 }

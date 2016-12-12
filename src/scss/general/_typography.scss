@@ -3,21 +3,25 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: $bodyLineHeight;
   margin: 0;
 }
-h1, h2, h3, h4, h5 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  line-height: 1;
-  margin: 20px 0;
-}
 
-h3 {
-  font-size: 28px;
+@each $breakpoint, $levels in $header-sizes {
+  @include breakpoint($breakpoint) {
+    @each $level, $size in $levels {
+      #{$level} {
+        font-size: $size;
+      }
+    }
+  }
 }
-h4 {
-  font-size: 20px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headerFont;
+  font-weight: 700;
+  line-height: $headerLineHeight;
+  margin: 20px 0;
+  line-height: $headerLineHeight;
 }
 
 strong {

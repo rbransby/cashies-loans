@@ -40,14 +40,49 @@ $colour-opacity: (
 );
 
 //// Fonts  ////////
-$fontNantes:         'NantesWeb';
-$fontKarla:          'Karla', sans-serif;
+$openSans:           'Open Sans', sans-serif;
+$bodyFont:           $openSans;
+$headerFont:         $openSans;
+$headerLineHeight:   1.2;
+$bodyLineHeight:     1.5;
+$header-sizes: (
+  small: (
+    'h1': 38px,
+    'h2': 28px,
+    'h3': 28px,
+    'h4': 16px,
+    'h5': 20px,
+    'h6': 18px
+  ),
+  medium: (
+    'h1': 48px,
+    'h2': 38px,
+    'h3': 34px,
+    'h4': 26px,
+    'h5': 24px,
+    'h6': 20px
+  ),
+  large: (
+    'h1': 70px,
+    'h2': 48px,
+    'h3': 38px,
+    'h4': 32px,
+    'h5': 26px,
+    'h6': 22px
+  ),
+);
 
 //// Buttons  ////////
-$button-padding: 15px 25px;
+$button-padding: (
+  small: 10px 15px,
+  default: 15px 20px,
+  large: 20px 30px,
+  xlarge: 20px 40px
+);
+
 $button-sizes: (
   small: 12px,
   default: 16px,
   large: 20px,
   xlarge: 24px,
-)
+);

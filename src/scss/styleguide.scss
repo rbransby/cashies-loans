@@ -8,8 +8,9 @@
 
 body.show-menu {
   overflow: hidden;
-  padding-top: 100px;
+  padding-top: 70px;
 }
+
 .grid-guide {
   & > div {
     @include g-unit(padding-top, 1);
@@ -92,18 +93,23 @@ body.show-menu {
   text-align: center;
 }
 
-.buttons {
-  // text-align: center;
-  &-item {
+.buttons-item {
+  @include space-unit(margin-bottom, 2);
+}
+
+.style-title {
+  &__h1 {
+    text-align: center;
+    font-size: 34px;
     @include space-unit(margin-bottom, 2);
+    text-transform: uppercase;
+    font-weight: 600;
   }
-}
-.page-title {
-  text-align: center;
-}
-.nav {
-  &__link {
-    display: inline;
-    margin-right: 20px;
+  &__h4 {
+    text-align: center;
+    font-size: 24px;
+    @include space-unit(margin-bottom, 2);
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }

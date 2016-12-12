@@ -13,9 +13,10 @@ $hamburger-hover-filter    : opacity(50%) !default;
 
 .style-nav {
   transition: background 0.3s $hamburger-hover-transition-timing-function;
-  height: 100px;
+  height: 70px;
   position: relative;
   z-index: 10;
+  overflow: hidden;
 
   &__inner {
     @include grid-row;
@@ -131,27 +132,39 @@ $hamburger-hover-filter    : opacity(50%) !default;
     left: 0;
     text-align: center;
     width: 100%;
-    @include g-unit('padding', 0.5);
+    height: 100vh;
+    overflow-y: auto;
+    padding: 0;
+    @include g-unit('padding-top', 1);
 
     .show-menu & {
       visibility: visible;
       opacity: 1;
     }
+
+    @include breakpoint(xlarge) {
+      @include g-unit('padding-top', 2);
+    }
   }
   &__link {
     color: white;
     text-transform: uppercase;
-    font-weight: 300;
-    @include g-unit('padding-top', 2);
+    font-weight: 600;
+    @include g-unit('padding-bottom', 2);
     font-size: 30px;
+    letter-spacing: 3px;
 
     a {
       text-decoration: none;
       color: inherit;
+      transition: color 0.3s ease;
       &:hover {
-        transition: color 0.3s ease;
-        color: get-colour('back');
+        color: get-colour('primary');
       }
+    }
+
+    @include breakpoint(xlarge) {
+      font-size: 50px;
     }
   }
 
@@ -159,7 +172,7 @@ $hamburger-hover-filter    : opacity(50%) !default;
     background-color: get-colour('tertiary');
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
 
