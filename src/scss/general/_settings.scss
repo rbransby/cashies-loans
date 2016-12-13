@@ -41,8 +41,10 @@ $colour-opacity: (
 
 //// Fonts  ////////
 $openSans:           'Open Sans', sans-serif;
+$gentiumBook:        'Gentium Book Basic', serif;
 $bodyFont:           $openSans;
 $headerFont:         $openSans;
+$menuFont:           $gentiumBook;
 $headerLineHeight:   1.2;
 $bodyLineHeight:     1.5;
 $header-sizes: (
@@ -86,3 +88,6 @@ $button-sizes: (
   large: 20px,
   xlarge: 24px,
 );
+
+//// Forms  ////////
+$inputPadding: 10px;

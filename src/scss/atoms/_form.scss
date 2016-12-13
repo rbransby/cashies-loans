@@ -1,0 +1,21 @@
+.form {
+
+  &__row {
+    @include g-unit(margin-bottom, 1);
+  }
+
+  &__label,
+  &__input {
+    display: block;
+    width: 100%;
+  }
+  &__label {
+    @include g-unit(margin-bottom, 0.2);
+    font-weight: 400;
+  }
+  &__input {
+    padding: $inputPadding;
+    outline: 1px solid get-colour('back', 'light');
+    border: 0;
+  }
+}

@@ -1,7 +1,7 @@
 .button {
   color: white;
   text-transform: uppercase;
-  // padding: $button-padding;
+  display: inline-block;
   padding: map-get($button-padding, default);
   font-size: map-get($button-sizes, default);
   text-align: center;

@@ -6,22 +6,25 @@ title: Forms
 <div class="form-guide">
   <div class="row">
     <div class="small-12 medium-6 small-centered columns">
-      <form action="" method="post">
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="user_name" />
+      <form class="form" action="" method="post">
+        <div class="form__row">
+          {{> input label="Text" id="name" type="text"}}
         </div>
-        <div>
-          <label for="mail">E-mail:</label>
-          <input type="email" id="mail" name="user_email" />
+        <div class="form__row">
+          {{> input label="E-Mail" id="email" type="email"}}
         </div>
-        <div>
-          <label for="msg">Message:</label>
-          <textarea id="msg" name="user_message"></textarea>
+        <div class="form__row">
+          {{> input label="Phone" id="phone" type="tel"}}
+        </div>
+        <div class="form__row">
+          {{> input label="Password" id="pass" type="password"}}
+        </div>
+        <div class="form__row">
+          {{> input label="Message" id="message" textarea="true" type="textarea"}}
         </div>
 
-        <div>
-          {{> button action="true" text="button" classes="button-primary button--full"}}
+        <div class="form__row">
+          {{> button action="true" text="Submit"  classes="form__submit button-primary button--full"}}
         </div>
       </form>
     </div>
