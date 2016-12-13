@@ -114,14 +114,17 @@
     font-weight: 600;
   }
 }
+.home,
+.campaign {
+  .row {
+    @include space-unit(padding, 1);
+  }
+}
 .campaign {
   padding-top: 0;
   .style-nav {
     position: fixed;
     width: 100%;
-  }
-  .row {
-    @include space-unit(padding, 1);
   }
 
 }
