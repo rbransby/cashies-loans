@@ -7,7 +7,8 @@ import _ from 'lodash';
  * @return {Object}               returns Function that creates a carousel
  */
 module.exports = (options) => {
-  let domClass = options.calssName || 'carousel';
+  options = options || {};
+  let domClass = options.className || 'carousel';
   let dom = document.getElementsByClassName(domClass);
   let base = {
     infinite: 1,
@@ -17,6 +18,7 @@ module.exports = (options) => {
     classNameNextCtrl: 'carousel__next'
   };
   if(dom.length) {
-    lory(dom[0], _.extend({}, base, options));
+    let api = lory(dom[0], _.extend({}, base, options));
+    api.setup();
   }
 };
