@@ -38,7 +38,7 @@
       background-color: get-colour('back');
       padding: 40px 0;
     }
-    background-color: get-colour('secondary');
+    background-color: get-colour('primary', 'light');
 
 
     &:before,
@@ -58,22 +58,22 @@
     &:before {
       top: 0;
       @include g-unit(margin-top, -0.5);
-      background-color: get-colour('secondary', 'dark');
+      background-color: get-colour('primary', 'light');
     }
     &:after {
       bottom: 0;
-      background-color: get-colour('secondary', 'dark');
+      background-color: get-colour('primary', 'light');
 
       @include g-unit(margin-bottom, -0.5);
     }
 
     &:nth-child(odd) {
-      background-color: get-colour('accent');
+      background-color: get-colour('tertiary', 'light');
       &:before {
-        background-color: get-colour('accent', 'dark');
+        background-color: get-colour('tertiary', 'light');
       }
       &:after {
-        background-color: get-colour('accent', 'dark');
+        background-color: get-colour('tertiary', 'light');
       }
     }
   }
