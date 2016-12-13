@@ -1,11 +1,7 @@
-.slider {
-
+.carousel {
   position: relative;
 
-  .frame {
-    /**
-                   * (optional) wrapper width, specifies width of the slider frame.
-                   */
+  &__inner {
     width: 100%;
     position: relative;
     font-size: 0;
@@ -14,21 +10,15 @@
     white-space: nowrap;
   }
 
-  .slides {
+  &__slides {
     display: inline-block;
-  }
-
-  ul {
     padding: 0;
     margin: 0;
   }
 
-  li {
+  &__slide {
     position: relative;
     display: inline-block;
-    /**
-                   * (optional) if the content inside the slide element has a defined size.
-                   */
     width: 100%;
     padding: 0;
     margin: 0;
@@ -38,28 +28,25 @@
     width: 100%;
   }
 
-  .next,
-  .prev {
+  &__next,
+  &__prev {
     position: absolute;
     top: 50%;
     margin-top: -25px;
     display: block;
     cursor: pointer;
+
+    svg {
+      width: 70px;
+      fill: rgba(255,255,255,0.5);
+    }
   }
 
-  .next {
+  &__next {
     right: 0;
   }
 
-  .prev {
+  &__prev {
     left: 0;
-  }
-
-  .next svg,
-  .prev svg {
-    width: 70px;
-  }
-  path {
-    fill: rgba(255,255,255,0.5);
   }
 }

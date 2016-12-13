@@ -33,14 +33,16 @@ const base = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js')
+  ]
 };
 
 const dev = _.assign({}, base);
 
 const prod = _.assign({}, base,  {
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
