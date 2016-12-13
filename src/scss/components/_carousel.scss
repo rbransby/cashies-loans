@@ -1,10 +1,12 @@
 .slider {
 
+  position: relative;
+
   .frame {
     /**
                    * (optional) wrapper width, specifies width of the slider frame.
                    */
-    width: 880px;
+    width: 100%;
     position: relative;
     font-size: 0;
     line-height: 0;
@@ -16,13 +18,24 @@
     display: inline-block;
   }
 
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
   li {
     position: relative;
     display: inline-block;
     /**
                    * (optional) if the content inside the slide element has a defined size.
                    */
-    width: 880px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
   }
 
   .next,
@@ -44,6 +57,9 @@
 
   .next svg,
   .prev svg {
-    width: 25px;
+    width: 70px;
+  }
+  path {
+    fill: rgba(255,255,255,0.5);
   }
 }

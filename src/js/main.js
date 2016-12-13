@@ -9,5 +9,5 @@ $(() => {
     $('body').toggleClass('show-menu');
   });
 
-  new Carousel;
+  new Carousel('.js_slider');
 });
