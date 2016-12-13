@@ -18,7 +18,6 @@ module.exports = (options) => {
     classNameNextCtrl: 'carousel__next'
   };
   if(dom.length) {
-    let api = lory(dom[0], _.extend({}, base, options));
-    api.setup();
+    lory(dom[0], _.extend({}, base, options));
   }
 };
