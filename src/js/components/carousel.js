@@ -1,8 +1,14 @@
 import {lory} from 'lory.js';
 import _ from 'lodash';
 
-module.exports = (carouselClass, options) => {
-  let dom = document.getElementsByClassName('carousel');
+/**
+ * Carousel create method
+ * @param  {Object} options       options for setup
+ * @return {Object}               returns Function that creates a carousel
+ */
+module.exports = (options) => {
+  let domClass = options.calssName || 'carousel';
+  let dom = document.getElementsByClassName(domClass);
   let base = {
     infinite: 1,
     classNameFrame: 'carousel__inner',
