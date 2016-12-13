@@ -1,18 +1,11 @@
-$hamburger-padding-x                       : 0 !default;
-$hamburger-padding-y                       : 0 !default;
-$hamburger-layer-width                     : 30px !default;
-$hamburger-layer-height                    : 2px !default;
-$hamburger-layer-spacing                   : 7px !default;
-$hamburger-layer-color                     : #000 !default;
-$hamburger-layer-border-radius             : 4px !default;
-$hamburger-hover-opacity                   : 0.7 !default;
-$hamburger-hover-transition-duration       : 0.15s !default;
-$hamburger-hover-transition-timing-function: linear !default;
-$hamburger-hover-use-filter: false !default;
-$hamburger-hover-filter    : opacity(50%) !default;
+$hamburger-layer-width                     : 30px;
+$hamburger-layer-height                    : 2px;
+$hamburger-layer-spacing                   : 7px;
+$hamburger-layer-color                     : #000;
+$hamburger-layer-border-radius             : 4px;
 
 .style-nav {
-  transition: background 0.3s $hamburger-hover-transition-timing-function;
+  transition: background $transitionTime $transitionEase;
   height: 70px;
   position: relative;
   z-index: 10;
@@ -28,7 +21,7 @@ $hamburger-hover-filter    : opacity(50%) !default;
     svg {
       fill: get-colour('tertiary');
       width: 100px;
-      transition: fill 0.3s ease;
+      transition: fill $transitionTime $transitionEase;
     }
   }
   &__burger {
@@ -38,8 +31,8 @@ $hamburger-hover-filter    : opacity(50%) !default;
     cursor: pointer;
     outline: none;
     transition-property: opacity, filter;
-    transition-duration: $hamburger-hover-transition-duration;
-    transition-timing-function: $hamburger-hover-transition-timing-function;
+    transition-duration: $transitionTime;
+    transition-timing-function: $transitionEase;
 
     // Normalize (<button>)
     font: inherit;
@@ -66,14 +59,6 @@ $hamburger-hover-filter    : opacity(50%) !default;
       }
     }
 
-    &:hover {
-      @if $hamburger-hover-use-filter == true {
-        filter: $hamburger-hover-filter;
-      }
-      @else {
-        opacity: $hamburger-hover-opacity;
-      }
-    }
 
     &-box {
       width: $hamburger-layer-width;
@@ -97,7 +82,7 @@ $hamburger-hover-filter    : opacity(50%) !default;
         position: absolute;
         transition-property: transform, background;
         transition-duration: 0.15s;
-        transition-timing-function: ease;
+        transition-timing-function: $transitionEase;
 
         .show-menu & {
           background-color: white;
@@ -113,7 +98,7 @@ $hamburger-hover-filter    : opacity(50%) !default;
       &::before {
         top: $hamburger-layer-height + $hamburger-layer-spacing;
         transition-property: transform, opacity;
-        transition-timing-function: ease;
+        transition-timing-function: $transitionEase;
         transition-duration: 0.2s;
       }
 
@@ -158,7 +143,7 @@ $hamburger-hover-filter    : opacity(50%) !default;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: background 0.3s ease, font 0.3s ease, letter-spacing 0.3s ease;
+    transition: background $transitionTime $transitionEase, font $transitionTime $transitionEase, letter-spacing $transitionTime $transitionEase;
     &:hover {
       background-color: white;
       color: get-colour('tertiary');
@@ -166,7 +151,7 @@ $hamburger-hover-filter    : opacity(50%) !default;
       letter-spacing: 0.5vw;
     }
     a {
-      transition: color 0.3s ease;
+      transition: color $transitionTime $transitionEase;
 
       text-decoration: none;
       color: inherit;

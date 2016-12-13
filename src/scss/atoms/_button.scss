@@ -9,16 +9,17 @@
   background-color: get-colour('primary');
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-weight: 600;
 
   &:hover {
-    background-color: get-colour('primary', 'light');
+    background-color: get-colour('primary', 'dark');
   }
 
   &-secondary {
     background-color: get-colour('secondary');
 
     &:hover {
-      background-color: get-colour('secondary', 'light');
+      background-color: get-colour('secondary', 'dark');
     }
   }
 
@@ -26,7 +27,7 @@
     background-color: get-colour('tertiary');
 
     &:hover {
-      background-color: get-colour('tertiary', 'light');
+      background-color: get-colour('tertiary', 'dark');
     }
   }
 
@@ -34,7 +35,7 @@
     background-color: get-colour('accent');
 
     &:hover {
-      background-color: get-colour('accent', 'light');
+      background-color: get-colour('accent', 'dark');
     }
   }
 
