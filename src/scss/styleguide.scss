@@ -6,7 +6,7 @@
   padding: 20px 0
 }
 
-body.show-menu {
+.show-menu .container{
   overflow: hidden;
   padding-top: 70px;
 }
@@ -112,4 +112,19 @@ body.show-menu {
     text-transform: uppercase;
     font-weight: 600;
   }
+}
+.campaign {
+  .style-nav {
+    position: fixed;
+    width: 100%;
+  }
+  .show-menu & {
+    padding-top: 0;
+  }
+  .row {
+    @include breakpoint(small) {
+      @include space-unit(padding, 2);
+    }
+  }
+
 }
