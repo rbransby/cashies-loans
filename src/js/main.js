@@ -8,5 +8,5 @@ $(() => {
   $('.style-nav__burger').on('click', () => {
     $('body').toggleClass('show-menu');
   });
-  new Carousel();
+  Carousel();
 });
