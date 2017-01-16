@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const _ = require('lodash');
 
 const base = {
   entry: {
@@ -39,9 +38,9 @@ const base = {
   ]
 };
 
-const dev = _.assign({}, base);
+const dev = Object.assign({}, base);
 
-const prod = _.assign({}, base,  {
+const prod = Object.assign({}, base,  {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

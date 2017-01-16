@@ -1,5 +1,4 @@
 const webpackConfig = require('./webpack.config');
-const _ = require('lodash');
 
 const PATHS = {
   src:        'src',
@@ -17,7 +16,7 @@ const PATHS = {
 };
 
 module.exports = {
-  paths: _.extend({}, PATHS),
+  paths: Object.assign({}, PATHS),
   webpack: {
     dev:        webpackConfig.dev,
     prod:       webpackConfig.prod
