@@ -27,9 +27,7 @@ module.exports = {
       precision: 10,
       includePaths: [
         './node_modules',
-        './node_modules/foundation-sites/scss',
-        require('bourbon').includePaths,
-        require('bourbon-neat').includePaths
+        './node_modules/foundation-sites/scss'
       ],
       sourcemaps: true
     },

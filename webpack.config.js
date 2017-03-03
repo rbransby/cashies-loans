@@ -15,33 +15,43 @@ const base = {
   output: {
     filename: '[name].js'
   },
-  devtool: 'source-map',
-  resolve: {
-    alias: {
-      // 'LIB_NAME$': 'DESTINATION',
-    }
-  },
   module: {
-    loaders: [
+    rules: [
       {
+        exclude: /node_modules/,
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
+        loader: 'babel-loader',
+        options: {
           presets: ['es2015']
         }
+      },
+      {
+        test: require.resolve('jquery'),
+        use: [
+          'expose-loader?jQuery',
+          'expose-loader?$',
+        ],
       }
     ]
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js')
-  ]
+  }
 };
 
-const dev = Object.assign({}, base);
+const dev = Object.assign({}, base, {
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor' // Specify the common bundle's name.
+    })
+  ]
+});
 
 const prod = Object.assign({}, base,  {
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor' // Specify the common bundle's name.
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -51,8 +61,7 @@ const prod = Object.assign({}, base,  {
       compress: {
         warnings: false
       }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    })
   ]
 });
 
