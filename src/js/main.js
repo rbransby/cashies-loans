@@ -4,11 +4,14 @@ import $ from 'jquery';
 // components
 import Carousel from './components/carousel';
 
+// polfills
+import ObjectFitImages from './polyfills/objectFit';
+
 $(() => {
   $('.style-nav__burger').on('click', () => {
     $('body').toggleClass('show-menu');
   });
-  setTimeout(()=>{
-    Carousel();
-  },1000);
+
+  Carousel();
+  ObjectFitImages();
 });

@@ -1,30 +1,34 @@
 .hero {
   position: relative;
   overflow: hidden;
-  height: 55vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   &__cover {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background-color: get-colour('back');
-  }
-  &__image {
-    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-width: 50%;
-    min-height: 50%;
-    overflow-x: hidden;
-    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+
+    &:after {
+      opacity: 0.5;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background: rgba(0,0,0,0.05)  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQYV2NkYGD4z8DAwMjIAAUADikBA/gvnngAAAAASUVORK5CYII=);
+    }
+  }
+  &__image {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    width: 100%;
+    height: 100%;
   }
   &__sup,
   &__title {
@@ -44,6 +48,7 @@
     text-align: center;
     color: white;
     font-weight: 800;
+    width: 100%;
     max-width: 70%;
     margin-left:auto;
     margin-right:auto;

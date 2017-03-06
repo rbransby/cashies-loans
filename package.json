@@ -41,8 +41,7 @@
     "html-loader": "^0.4.4",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
-    "normalize-scss": "^6.0.0",
-    "panini": "^1.3.0",
+    "panini": "^1.3.1",
     "run-sequence": "^1.2.2",
     "script-loader": "^0.7.0",
     "webpack": "^2.2.1",
@@ -71,6 +70,7 @@
     "js-cookie": "^2.1.3",
     "lodash": "^4.16.4",
     "lory.js": "^2.2.1",
-    "normalize-scss": "^6.0.0"
+    "normalize-scss": "^5.0.3",
+    "object-fit-images": "^3.1.3"
   }
 }

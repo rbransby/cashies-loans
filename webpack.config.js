@@ -9,7 +9,8 @@ const base = {
       'lodash',
       'lory.js',
       'hammerjs',
-      'js-cookie'
+      'js-cookie',
+      'object-fit-images'
     ]
   },
   output: {

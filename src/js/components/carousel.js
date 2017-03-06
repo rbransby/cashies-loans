@@ -1,15 +1,15 @@
 import {lory} from 'lory.js';
-import _ from 'lodash';
+import {assign} from 'lodash';
 
 /**
  * Carousel create method
  * @param  {Object} options       options for setup
  * @return {Object}               returns Function that creates a carousel
  */
-module.exports = (options) => {
+export default (options) => {
   options = options || {};
-  let domClass = options.className || 'carousel';
-  let dom = document.getElementsByClassName(domClass);
+  let domClass = options.className || '.carousel';
+  let domNode = document.querySelector(domClass);
   let base = {
     infinite: 1,
     classNameFrame: 'carousel__inner',
@@ -17,7 +17,7 @@ module.exports = (options) => {
     classNamePrevCtrl: 'carousel__prev',
     classNameNextCtrl: 'carousel__next'
   };
-  if(dom.length) {
-    lory(dom[0], _.extend({}, base, options));
+  if(domNode) {
+    lory(domNode, assign({}, base, options));
   }
 };

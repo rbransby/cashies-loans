@@ -1,4 +1,5 @@
 'use strict';
+const panini =            require('panini');
 
 const runSequence =       require('run-sequence');
 const browserSync =       require('browser-sync');

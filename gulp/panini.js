@@ -4,6 +4,7 @@ const config =            require('../config');
 
 module.exports = (gulp) => {
   return () => {
+    console.log('panini running again ****');
     panini.refresh();
     return gulp.src(`${config.paths.pages}/**/*.html`)
       .pipe(panini({
