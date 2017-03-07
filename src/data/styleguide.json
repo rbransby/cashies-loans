@@ -26,22 +26,53 @@
     }
   ],
   "carouselImages": [
-      "https://unsplash.it/1800/800?image=668",
-      "https://unsplash.it/1800/800?image=625",
-      "https://unsplash.it/1800/800?image=532",
-      "https://unsplash.it/1800/800?image=759"
+      {
+        "alt": "iPad tablet and apple keyboard on a desk",
+        "src": "https://unsplash.it/600/400?image=668",
+        "srcset": [
+          "https://unsplash.it/1000/600?image=668 1000w",
+          "https://unsplash.it/1800/1000?image=668 1800w",
+          "https://unsplash.it/2800/1400?image=668 2800w"
+        ]
+      },
+      {
+        "alt": "A table with 6 white chairs",
+        "src": "https://unsplash.it/600/400?image=625",
+        "srcset": [
+          "https://unsplash.it/1000/600?image=625 1000w",
+          "https://unsplash.it/1800/1000?image=625 1800w",
+          "https://unsplash.it/2800/1400?image=625 2800w"
+        ]
+      },
+      {
+        "alt": "A desk with varias items, an apple imac, mouse, speakers and toys",
+        "src": "https://unsplash.it/600/400?image=532",
+        "srcset": [
+          "https://unsplash.it/1000/600?image=532 1000w",
+          "https://unsplash.it/1800/1000?image=532 1800w",
+          "https://unsplash.it/2800/1400?image=532 2800w"
+        ]
+      },
+      {
+        "alt": "A desk with a blank notepad and coffee cup",
+        "src": "https://unsplash.it/600/400?image=759",
+        "srcset": [
+          "https://unsplash.it/1000/600?image=759 1000w",
+          "https://unsplash.it/1800/1000?image=759 1800w",
+          "https://unsplash.it/2800/1400?image=759 2800w"
+        ]
+      }
   ],
   "campaignPage": {
     "title": "What will you create today",
     "super": "retrograde",
     "heroImage": {
       "alt": "Old 18th century typrwriter with paper",
-      "src": "https://unsplash.it/600/600?image=485",
+      "src": "https://unsplash.it/600/400?image=486",
       "srcset": [
-        "https://unsplash.it/800/800?image=484 800w",
-        "https://unsplash.it/1200/800?image=486 1200w",
-        "https://unsplash.it/1800/1200?image=487 1800w",
-        "https://unsplash.it/2800/1800?image=490 2800w"
+        "https://unsplash.it/1000/600?image=486 1000w",
+        "https://unsplash.it/1800/1200?image=486 1800w",
+        "https://unsplash.it/2800/1400?image=486 2800w"
       ]
     },
     "sections": [

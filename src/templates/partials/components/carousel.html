@@ -3,7 +3,7 @@
         <ul class="carousel__slides">
           {{#each this.images}}
             <li class="carousel__slide">
-              <img src="{{this}}" alt="">
+              {{> image img=this}}
             </li>
           {{/each}}
         </ul>
