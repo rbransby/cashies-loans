@@ -30,18 +30,24 @@
     background: transparent;
     position: relative;
     z-index: 1;
+
+    // Remove IE select dropdown arrow
+    &::-ms-expand {
+      display: none;
+    }
   }
   &__select-wrap {
     background-color: white;
     position: relative;
     &:before {
-      font-family: 'Material Icons';
+      @include material-icon;
       content: 'expand_more';
       display: block;
       position: absolute;
       z-index: 0;
       right: 10px;
-      font-size: 24px;
+      font-size: 28px;
+
     }
   }
 
@@ -55,7 +61,7 @@
       position: relative;
       cursor: pointer;
       &:before {
-        font-family: 'Material Icons';
+        @include material-icon;
         content: '';
         position: absolute;
         display: block;
