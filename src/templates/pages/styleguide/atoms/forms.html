@@ -24,6 +24,30 @@ title: Forms
         </div>
 
         <div class="form__row">
+          {{> select
+            select=styleguide.forms.select
+          }}
+        </div>
+
+        <ul class="form__row">
+          <li class="form__row-list">
+            {{> checkbox label="Option A" name="checks" id="check1"}}
+          </li>
+          <li class="form__row-list">
+            {{> checkbox label="Option B" name="checks" id="check2"}}
+          </li>
+        </ul>
+
+        <ul class="form__row">
+          <li class="form__row-list">
+            {{> radio label="Option A" name="rads" id="rad1"}}
+          </li>
+          <li class="form__row-list">
+            {{> radio label="Option B" name="rads" id="rad2"}}
+          </li>
+        </ul>
+
+        <div class="form__row">
           {{> button action="true" text="Submit"  classes="form__submit button-primary button--full"}}
         </div>
       </form>

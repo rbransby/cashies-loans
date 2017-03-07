@@ -63,6 +63,29 @@
         ]
       }
   ],
+  "forms": {
+    "select": {
+      "name": "select-sample",
+      "options": [
+        {
+          "text": "",
+          "value": 0
+        },
+        {
+          "text": "Item 1",
+          "value": 1
+        },
+        {
+          "text": "Item 2",
+          "value": 2
+        },
+        {
+          "text": "Item 3",
+          "value": 3
+        }
+      ]
+    }
+  },
   "campaignPage": {
     "title": "What will you create today",
     "super": "retrograde",
