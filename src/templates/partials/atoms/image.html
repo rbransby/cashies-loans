@@ -1,6 +1,9 @@
-<img src="{{this.src}}" class="{{class}}"
-  {{#if this.srcset}}
-    srcset="{{{this.srcset}}}"
+<img src="{{this.img.src}}" class="{{this.class}}"
+  {{#if this.img.srcset}}
+    srcset="{{{this.img.srcset}}}"
   {{/if}}
-alt="{{this.alt}}"
+  {{#if this.img.sizes}}
+    sizes="{{{this.img.sizes}}}"
+  {{/if}}
+alt="{{this.img.alt}}"
 />

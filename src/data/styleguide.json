@@ -32,13 +32,16 @@
       "https://unsplash.it/1800/800?image=759"
   ],
   "campaignPage": {
-    "title": "What will you create today?",
+    "title": "What will you create today",
     "super": "retrograde",
     "heroImage": {
-      "src": "https://unsplash.it/800/800?image=486",
+      "alt": "Old 18th century typrwriter with paper",
+      "src": "https://unsplash.it/600/600?image=485",
       "srcset": [
-        "https://unsplash.it/1200/600?image=486 1000w",
-        "https://unsplash.it/1800/800?image=486 1600w"
+        "https://unsplash.it/800/800?image=484 800w",
+        "https://unsplash.it/1200/800?image=486 1200w",
+        "https://unsplash.it/1800/1200?image=487 1800w",
+        "https://unsplash.it/2800/1800?image=490 2800w"
       ]
     },
     "sections": [
