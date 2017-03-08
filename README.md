@@ -34,7 +34,7 @@ gulp serve
 gulp serve:prod
 ```
 
-**[Full gulp task documentation](gulp/README.md)**
+### [Full gulp task documentation](gulp/README.md)
 
 ## Deployment
 To build a production ready build of the source files to the `\dist` folder run the default task
@@ -51,5 +51,3 @@ TODO: Live hosting deployment are yet to be defined.
 * Webpack
 * SASS
 * ES6
-
-## Development
