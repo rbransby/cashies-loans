@@ -4,13 +4,13 @@ const runSequence =       require('run-sequence');
 const browserSync =       require('browser-sync');
 const config =            require('../config');
 const ngrok =             require('ngrok');
-const proxyMiddleware =   require('http-proxy-middleware');
-
-const proxy = proxyMiddleware(['/END_POINT_HERE'], {
-  changeOrigin  : true,
-  logLevel      : 'debug',
-  target        : 'http://example.com',
-});
+// const proxyMiddleware =   require('http-proxy-middleware');
+//
+// const proxy = proxyMiddleware(['/END_POINT_HERE'], {
+//   changeOrigin  : true,
+//   logLevel      : 'debug',
+//   target        : 'http://example.com',
+// });
 
 const tunnel = (error, bsync) => {
   ngrok.connect(bsync.options.get('port'), (_e, url) => {
