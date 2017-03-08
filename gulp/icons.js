@@ -16,7 +16,7 @@ module.exports = (gulp, $) => {
       }))
       .pipe($.iconfont({
         fontName: fontName,
-        formats: ['woff', 'eot', 'svg'],
+        formats: ['woff', 'ttf', 'svg'],
         normalize: true
       }))
       .on('error', handleError)
