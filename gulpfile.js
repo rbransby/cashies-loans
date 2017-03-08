@@ -48,10 +48,10 @@ gulp.task('icons', iconsTask(gulp, $));
 
 gulp.task('clean', del.bind(null, [config.paths.dist]));
 
-gulp.task('build', () => {
-  runSequence(['clean'], ['lint', 'images', 'styles:prod', 'scripts:prod', 'panini', 'extras'], () => {
-    return gulp.src(`${config.paths.dist}/**/*`).pipe($.size({gzip: true}));
-  });
+gulp.task('build', (done) => {
+  runSequence(['clean'], ['lint', 'images', 'styles:prod', 'scripts:prod', 'panini', 'extras'], done);
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', ['build'], () => {
+  return gulp.src(`${config.paths.dist}/**/*`).pipe($.size({gzip: true, showFiles: true, title:'[built]'}));
+});
