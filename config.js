@@ -40,7 +40,5 @@ module.exports = {
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
     }
   },
-  panini: {
-
-  }
+  iconFontName: 'isobar'
 };

@@ -5,7 +5,7 @@ const config =            require('../config');
 const handleError =       require('./handleError');
 
 module.exports = (gulp, $) => {
-  let fontName = 'adrinawa';
+  let fontName = config.iconFontName;
   return () => {
     return gulp.src([`${config.paths.icons}/*.svg`], {'base': `${config.paths.src}`})
       .pipe($.iconfontCss({
