@@ -11,6 +11,9 @@ rules:
   id-name-format: 0
   leading-zero: 0
   mixin-name-format: 0
+  nesting-depth:
+    - 1
+    - max-depth: 3  
   no-color-literals: 0
   no-important: 0
   no-url-domains: 0
