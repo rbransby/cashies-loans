@@ -2,7 +2,6 @@
 const del =               require('del');
 const gulp =              require('gulp');
 const config =            require('./config');
-const runSequence =       require('run-sequence');
 const $ =                 require('gulp-load-plugins')();
 
 //Task bases
