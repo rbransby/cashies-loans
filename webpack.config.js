@@ -62,7 +62,10 @@ const prod = Object.assign({}, base,  {
         NODE_ENV: '"production"'
       }
     })
-  ].concat(plugins).reverse()
+  ].concat(plugins).reverse(),
+  stats: {
+    assets: false
+  }
 });
 
 module.exports = {

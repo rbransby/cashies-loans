@@ -7,8 +7,10 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/gulp"
+    "start": "gulp serve",
+    "start:prod": "gulp serve:prod",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
