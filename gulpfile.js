@@ -9,7 +9,8 @@ const $ =                 gulpLoadPlugins();
 //Task bases
 const scriptsTask =       require('./gulp/scripts');
 const stylesTask =        require('./gulp/styles');
-const lintTask =          require('./gulp/lint');
+const lintTask =          require('./gulp/lintScripts');
+const lintStylesTask =    require('./gulp/lintStyles');
 const imagesTask =        require('./gulp/images');
 const iconsTask =         require('./gulp/icons');
 const paniniTask =        require('./gulp/panini');
@@ -17,7 +18,9 @@ const extrasTask =        require('./gulp/extras');
 const serveTask =         require('./gulp/serve');
 
 //Task definitions
-gulp.task('lint', lintTask(gulp, $));
+gulp.task('lintScripts', lintTask(gulp, $));
+
+gulp.task('lintStyles', lintStylesTask(gulp, $));
 
 gulp.task('images', imagesTask(gulp, $));
 
@@ -43,7 +46,7 @@ gulp.task('icons', iconsTask(gulp, $)); // only run if we added new icons
 
 gulp.task('clearCache',() => $.cache.clearAll());
 
-gulp.task('build', ['lint', 'images', 'styles:prod', 'scripts:prod', 'panini', 'extras'], () => {
+gulp.task('build', ['lintStyles', 'lintScripts', 'images', 'styles:prod', 'scripts:prod', 'panini', 'extras'], () => {
   return gulp.src(`${config.paths.dist}/**/*`).pipe($.size({gzip: true}));
 });
 

@@ -1,5 +1,5 @@
 .button {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   display: inline-block;
   padding: map-get($button-padding, default);
@@ -41,21 +41,21 @@
 
   &--full {
     display: block;
-    width: 100%;
+    width: 100% !important;
   }
 
   // Sizes
-   @each $size, $value in map-remove($button-sizes, default) {
-     &--#{$size} {
-       font-size: $value;
-     }
-   }
+  @each $size, $value in map-remove($button-sizes, default) {
+    &--#{$size} {
+      font-size: $value;
+    }
+  }
 
   // Paddings
-   @each $size, $value in map-remove($button-padding, default) {
-     &--#{$size} {
-       padding: $value;
-     }
-   }
+  @each $size, $value in map-remove($button-padding, default) {
+    &--#{$size} {
+      padding: $value;
+    }
+  }
 
 }

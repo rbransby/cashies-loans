@@ -3,10 +3,11 @@
   &__row {
     @include g-unit(margin-bottom, 1);
     padding: 0;
+
     &-list {
+      @include g-unit(margin-right, 1);
       list-style: none;
       display: inline-block;
-      @include g-unit(margin-right, 1);
     }
   }
 
@@ -19,7 +20,7 @@
   }
 
   &__input,
-  &__select{
+  &__select {
     padding: $inputPadding;
     outline: 1px solid get-colour('back', 'light');
     border: 0;
@@ -36,10 +37,12 @@
       display: none;
     }
   }
+
   &__select-wrap {
-    background-color: white;
+    background-color: #fff;
     position: relative;
-    &:before {
+
+    &::before {
       @include material-icon;
       content: 'expand_more';
       display: block;
@@ -60,7 +63,8 @@
       padding-left: 30px;
       position: relative;
       cursor: pointer;
-      &:before {
+
+      &::before {
         @include material-icon;
         content: '';
         position: absolute;
@@ -74,38 +78,41 @@
         border: 1px solid get-colour('back', 'dark');
       }
     }
+
     &-radio {
-      &:before {
+      &::before {
         border-radius: 100%;
         font-size: 16px;
       }
     }
+
     &-checkbox {
-      &:before {
+      &::before {
         font-size: 18px;
         border-radius: 2px;
       }
     }
   }
+
   &__input-radio,
   &__input-checkbox {
     position: absolute;
     width: 0;
     height: 0;
     opacity: 0;
-
-
   }
+
   &__input-radio {
     &:checked ~ label {
-      &:before {
+      &::before {
         content: 'fiber_manual_record';
       }
     }
   }
+
   &__input-checkbox {
     &:checked ~ label {
-      &:before {
+      &::before {
         content: 'done';
       }
     }

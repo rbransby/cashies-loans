@@ -1,6 +1,6 @@
 // Frameworks
-@import "normalize-scss/sass/normalize";
-@import "general/settings_foundation";
+@import 'normalize-scss/sass/normalize';
+@import 'general/settings_foundation';
 @import 'foundation-sites/scss/util/util';
 @import 'foundation-sites/scss/global';
 @import 'foundation-sites/scss/grid/grid';
@@ -8,21 +8,21 @@
 @include foundation-grid;
 
 // General
-@import "general/settings";
-@import "general/functions";
-@import "general/mixins";
-@import "general/animations";
-@import "general/base";
-@import "general/typography";
+@import 'general/settings';
+@import 'general/functions';
+@import 'general/mixins';
+@import 'general/animations';
+@import 'general/base';
+@import 'general/typography';
 
 // Atoms
-@import "atoms/grid";
-@import "atoms/form";
-@import "atoms/button";
-@import "atoms/colour";
+@import 'atoms/grid';
+@import 'atoms/form';
+@import 'atoms/button';
+@import 'atoms/colour';
 
 // Molecules
-@import "molecules/hero";
+@import 'molecules/hero';
 
 // Components
-@import "components/carousel";
+@import 'components/carousel';
