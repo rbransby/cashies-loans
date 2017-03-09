@@ -61,7 +61,7 @@ const prod = Object.assign({}, base,  {
     })
   ].concat(plugins).reverse(),
   stats: {
-    assets: true
+    assets: false
   }
 });
 
