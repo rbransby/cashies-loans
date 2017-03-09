@@ -9,8 +9,7 @@ module.exports = (gulp, $) => {
       .pipe($.imagemin([
         imageminMozjpeg({ quality:80 }),
         imageminGifsicle({ optimizationLevel: 3 }),
-        imageminPngquant({ quality: 80 })],
-        {verbose: true}))
+        imageminPngquant({ quality: 80 })]))
       .pipe(gulp.dest(`${config.paths.dist}/images`));
   };
 };
