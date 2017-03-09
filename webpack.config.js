@@ -21,10 +21,7 @@ const base = {
       {
         exclude: /node_modules/,
         test: /\.js$/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['es2015']
-        }
+        loader: 'babel-loader'
       },
       {
         test: require.resolve('jquery'),
@@ -64,7 +61,7 @@ const prod = Object.assign({}, base,  {
     })
   ].concat(plugins).reverse(),
   stats: {
-    assets: false
+    assets: true
   }
 });
 
