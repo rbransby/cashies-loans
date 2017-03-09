@@ -11,8 +11,8 @@
     "start:prod": "gulp serve:prod",
     "lint": "gulp lint",
     "build": "gulp",
-    "precommit": "gulp lint",
-    "prepush": "gulp",
+    "precommit": "npm run lint",
+    "prepush": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
