@@ -47,3 +47,23 @@ The generated icon styles are outputted to `scss/general/_icons.scss`
 gulp icons
 ```
 Note: This task needs to be manually run whenever new icons have been added.
+
+### Panini
+[Panini](http://foundation.zurb.com/sites/docs/panini.html) is a flat file compiler that uses the concepts of templates, pages, and partials—powered by the Handlebars templating language.
+
+HTML files in the `/src/templates/` directory are compiled into a flattened site.
+
+The `templates` directory consists of:
+
+* **`pages`**
+Each file in this directory generates a HTML page
+* **`layouts`**
+A common layout that pages can share
+* **`partials`**
+Partials allow you to inject HTML anywhere in a page or layout.
+* **`helpers`**
+Helpers are special functions that manipulate content on the page. In addition to Handlebars's built-in helpers, Panini includes a few custom helpers and you can add your own.
+
+```
+gulp panini
+```
