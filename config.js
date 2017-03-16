@@ -15,8 +15,17 @@ const PATHS = {
   helpers:    'src/templates/helpers'
 };
 
+const PANINI = {
+  root:       PATHS.pages,
+  layouts:    PATHS.layouts,
+  partials:   PATHS.partials,
+  data:       PATHS.data,
+  helpers:    PATHS.helpers
+};
+
 module.exports = {
   paths: PATHS,
+  panini: PANINI,
   webpack: {
     dev:        webpackConfig.dev,
     prod:       webpackConfig.prod
