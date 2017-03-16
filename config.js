@@ -16,7 +16,7 @@ const PATHS = {
 };
 
 module.exports = {
-  paths: Object.assign({}, PATHS),
+  paths: PATHS,
   webpack: {
     dev:        webpackConfig.dev,
     prod:       webpackConfig.prod
@@ -39,6 +39,11 @@ module.exports = {
     autoprefixer: {
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
     }
+  },
+  imagemin: {
+    jpg: 80,
+    gif: 3,
+    png: 80
   },
   iconFontName: 'isobar'
 };
