@@ -1,5 +1,5 @@
 {{#if this.action}}
-  <button type="button" class="button {{this.classes}}" id="{{this.id}}" {{this.attributes}}>
+  <button type="button" class="button {{this.classes}}" id="{{this.id}}" {{this.attributes}} data-automation="{{this.name}}-{{this.id}}">
     {{#if this.icon-place-before}}
         <span class="icon icon-{{this.icon}}"></span>
     {{/if}}
@@ -9,7 +9,7 @@
     {{/if}}
   </button>
 {{else}}
-  <a href="{{this.href}}" class="button {{this.classes}}" id="{{this.id}}" {{#if this.external}}target="_blank" {{/if}} {{this.attributes}}>
+  <a href="{{this.href}}" class="button {{this.classes}}" id="{{this.id}}" {{#if this.external}}target="_blank" {{/if}} {{this.attributes}} data-automation="{{this.name}}-{{this.id}}">
       {{#if this.icon-place-before}}
           <span class="icon icon-{{this.icon}}"></span>
       {{/if}}

@@ -8,30 +8,33 @@ title: Forms
     <div class="medium-8 large-6 medium-centered columns">
       <form class="form" action="" method="post">
         <div class="form__row">
-          {{> input label="Text" id="name" type="text"}}
+          {{> input label="Text" id="frist-name" type="text" name="name"}}
         </div>
         <div class="form__row">
-          {{> input label="E-Mail" id="email" type="email"}}
+          {{> input label="E-Mail" id="primary-email" type="email" name="email" }}
         </div>
         <div class="form__row">
-          {{> input label="Phone" id="phone" type="tel"}}
+          {{> input label="Home Phone" id="home-phone" type="tel" name="phone"}}
         </div>
         <div class="form__row">
-          {{> input label="Password" id="pass" type="password"}}
+          {{> input label="Mobile Phone" id="mobile-phone" type="tel" name="phone"}}
         </div>
         <div class="form__row">
-          {{> input label="Message" id="message" textarea="true" type="textarea"}}
+          {{> input label="Password" id="password" type="password" name="password"}}
+        </div>
+        <div class="form__row">
+          {{> input label="Message" id="message" textarea="true" type="textarea" name="message"}}
         </div>
 
         <div class="form__row">
-          {{> select
-            select=styleguide.forms.select
+          {{> select id="age"
+            select=styleguide.forms.select name="age"
           }}
         </div>
 
         <ul class="form__row">
           <li class="form__row-list">
-            {{> checkbox label="Option A" name="checks" id="check1"}}
+            {{> checkbox label="Option A" name="checks" id="check1" name="terms"}}
           </li>
           <li class="form__row-list">
             {{> checkbox label="Option B" name="checks" id="check2"}}
@@ -40,15 +43,15 @@ title: Forms
 
         <ul class="form__row">
           <li class="form__row-list">
-            {{> radio label="Option A" name="rads" id="rad1"}}
+            {{> radio label="Option A" name="radios" id="rad1"}}
           </li>
           <li class="form__row-list">
-            {{> radio label="Option B" name="rads" id="rad2"}}
+            {{> radio label="Option B" name="radios" id="rad2"}}
           </li>
         </ul>
 
         <div class="form__row">
-          {{> button action="true" text="Submit"  classes="form__submit button-primary button--full"}}
+          {{> button id="submit" action="true" text="Submit"  classes="form__submit button-primary button--full" name="submit"}}
         </div>
       </form>
     </div>
