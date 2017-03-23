@@ -20,8 +20,8 @@ const base = {
     rules: [
       {
         exclude: /node_modules/,
-        test: /\.js$/,
-        loader: 'babel-loader'
+        test   : /\.js$/,
+        loader : 'babel-loader'
       },
       {
         test: require.resolve('jquery'),
@@ -66,6 +66,6 @@ const prod = Object.assign({}, base,  {
 });
 
 module.exports = {
-  dev: dev,
+  dev : dev,
   prod: prod
 };
