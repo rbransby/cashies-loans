@@ -1,20 +1,20 @@
 //Gulp tools
-const del =               require('del');
-const gulp =              require('gulp');
-const config =            require('./config');
-const runSequence =       require('run-sequence');
-const $ =                 require('gulp-load-plugins')();
+const del            = require('del');
+const gulp           = require('gulp');
+const config         = require('./config');
+const runSequence    = require('run-sequence');
+const $              = require('gulp-load-plugins')();
 
 //Task bases
-const serveTask =         require('./gulp/serve');
-const iconsTask =         require('./gulp/icons');
-const paniniTask =        require('./gulp/panini');
-const imagesTask =        require('./gulp/images');
-const extrasTask =        require('./gulp/extras');
-const stylesTask =        require('./gulp/styles');
-const scriptsTask =       require('./gulp/scripts');
-const lintStylesTask =    require('./gulp/lintStyles');
-const lintScriptsTask =   require('./gulp/lintScripts');
+const serveTask      = require('./gulp/serve');
+const iconsTask      = require('./gulp/icons');
+const paniniTask     = require('./gulp/panini');
+const imagesTask     = require('./gulp/images');
+const extrasTask     = require('./gulp/extras');
+const stylesTask     = require('./gulp/styles');
+const scriptsTask    = require('./gulp/scripts');
+const lintStylesTask = require('./gulp/lintStyles');
+const lintScriptsTask = require('./gulp/lintScripts');
 
 //Task definitions
 gulp.task('panini', paniniTask(gulp));
