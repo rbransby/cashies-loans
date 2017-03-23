@@ -6,7 +6,7 @@ title: Forms
 <div class="form-guide">
   <div class="row">
     <div class="medium-8 large-6 medium-centered columns">
-      <form class="form" action="" method="post">
+      <form id="atom-samples" class="form" action="/styleguide/atoms/forms.html" method="post">
         <div class="form__row">
           {{> input label="Text" id="frist-name" type="text" name="name"}}
         </div>
@@ -51,7 +51,7 @@ title: Forms
         </ul>
 
         <div class="form__row">
-          {{> button id="submit" action="true" text="Submit"  classes="form__submit button-primary button--full" name="submit"}}
+          {{> button id="submit" action="true" text="Submit" type="submit" classes="form__submit button-primary button--full" name="submit"}}
         </div>
       </form>
     </div>

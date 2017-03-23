@@ -16,7 +16,9 @@
 
   <body>
     <div class="container {{layoutClass}}">
-      {{> styleguide-nav }}
+      <header>
+        {{> styleguide-nav }}
+      </header>
       {{#if title}}
       <h1 class="style-title__h1">{{title}}</h1>
       {{/if}}
