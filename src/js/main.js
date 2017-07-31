@@ -1,17 +1,18 @@
-// libs
-import $ from 'jquery';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app';
+import { Provider } from 'react-redux';
+import Store from './store';
 
-// components
-import Carousel from './components/carousel';
+const StoreInstance = Store();
 
-// polfills
-import ObjectFitImages from './polyfills/objectFit';
+const root = document.getElementById('root');
 
-$(() => {
-  $('.style-nav__burger').on('click', () => {
-    $('body').toggleClass('show-menu');
-  });
-
-  Carousel();
-  ObjectFitImages();
-});
+if (root) {
+  ReactDOM.render(
+    <Provider store={StoreInstance}>
+      <App />
+    </Provider>,
+    root
+  );
+}
