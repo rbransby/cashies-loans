@@ -3,16 +3,31 @@
     "browser" : true,
     "commonjs": true,
     "es6"     : true,
-    "node"    : true
+    "node"    : true,
+    "jest"    : true
   },
+  "plugins": [
+    "react"
+  ],
   "extends": "eslint:recommended",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "15.0" // React version, default to the latest React stable release
+    }
   },
   "rules": {
     "indent": [
       "error",
-      2
+      2,
+      { "SwitchCase": 1 }
     ],
     "quotes": [
       "error",
@@ -22,6 +37,8 @@
       "error",
       "always"
     ],
-    "no-console": "warn"
+    "no-console": "warn",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }

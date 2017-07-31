@@ -18,10 +18,14 @@ const base = {
   },
   module: {
     rules: [
-      {
-        exclude: /node_modules/,
-        test   : /\.js$/,
-        loader : 'babel-loader'
+      { 
+        test: /\.jsx?$/,
+        exclude: /node_modules/, 
+        loader: "babel-loader", 
+        query:
+          {
+            presets:['es2015', 'react']
+          }
       },
       {
         test: require.resolve('jquery'),
