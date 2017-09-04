@@ -1,8 +1,13 @@
-import SampleReducer from './sampleReducer';
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+
+import SampleReducer from './SampleReducer';
 
 const rootReducer = combineReducers({
-  SampleReducer
+  SampleReducer,
+
+  // enhance store with routing
+  routing: routerReducer
 });
 
-export default rootReducer; 
+export default rootReducer;

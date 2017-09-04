@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import SampleComponent from './components/sampleComponent';
+import Header from './components/global/Header';
 
 class App extends Component {
   render() {
     return (
       <div id="app">
-        <h1>Hello World!</h1>
-        <SampleComponent />
+        <Header />
+        {this.props.children}
       </div>
     );
   }

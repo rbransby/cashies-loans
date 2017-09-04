@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import Store from '../store';
 
-import SampleComponent from '../components/sampleComponent';
+import SampleComponent from '../components/SampleComponent';
 
 const StoreInstance = Store();
 

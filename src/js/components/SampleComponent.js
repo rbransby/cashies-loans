@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { assign } from 'lodash';
 
-import * as sampleActions from '../actions/sampleActions';
+import * as SampleActions from '../actions/SampleActions';
 
 class SampleComponent extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ function mapStateToProps(state/*, props*/) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(assign({}, sampleActions), dispatch)
+    actions: bindActionCreators(assign({}, SampleActions), dispatch)
   };
 }
 

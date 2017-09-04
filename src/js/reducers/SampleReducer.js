@@ -1,6 +1,6 @@
 import { assign } from 'lodash';
 
-import { SAMPLE_ACTION, SIGN_IN, SIGN_OUT } from '../actions/sampleActions';
+import { SAMPLE_ACTION, SIGN_IN, SIGN_OUT } from '../actions/SampleActions';
 
 const initialState = {
   login: {

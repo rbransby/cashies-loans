@@ -1,9 +1,12 @@
 'use strict';
 
-const runSequence =       require('run-sequence');
-const browserSync =       require('browser-sync');
-const config =            require('../config');
-const ngrok =             require('ngrok');
+const runSequence = require('run-sequence');
+const browserSync = require('browser-sync');
+const config      = require('../config');
+const ngrok       = require('ngrok');
+const url         = require('url');
+const fs          = require('fs');
+const path        = require('path');
 // const proxyMiddleware =   require('http-proxy-middleware');
 //
 // const proxy = proxyMiddleware(['/END_POINT_HERE'], {
@@ -18,12 +21,24 @@ const tunnel = (error, bsync) => {
   });
 };
 
+const folder = path.resolve(config.paths.dist);
+
 module.exports = (gulp, options) => {
   // intermediary to reload browser on hbs html change
   gulp.task('hbs-watch', ['panini'], (done) => {
     browserSync.reload();
     done();
   });
+
+  const catchAll = (req, res, next) => {
+    let fileName = url.parse(req.url);
+    fileName = fileName.href.split(fileName.search).join('');
+    const fileExists = fs.existsSync(folder + fileName);
+    if (!fileExists && fileName.indexOf('browser-sync-client') < 0) {
+      req.url = '/';
+    }
+    return next();
+  };
 
   return () => {
     runSequence(['clean'], [`styles:${options.env}`, `scripts:${options.env}`, 'panini', 'extras', 'images'], () => {
@@ -35,7 +50,7 @@ module.exports = (gulp, options) => {
           baseDir: [config.paths.dist],
           routes: {},
           // config for api proxy above
-          // middleware: [proxy]
+          middleware: catchAll
         }
       },
       tunnel);
