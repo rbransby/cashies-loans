@@ -13,9 +13,13 @@
     "build": "gulp",
     "precommit": "npm run lint",
     "prepush": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook -c .storybook -o dist/storybook"
   },
   "devDependencies": {
+    "@storybook/addon-options": "^3.2.3",
+    "@storybook/react": "^3.2.3",
     "babel-core": "^6.17.0",
     "babel-jest": "^20.0.3",
     "babel-loader": "^6.2.5",
