@@ -10,12 +10,13 @@
     "start": "gulp serve",
     "start:prod": "gulp serve:prod",
     "lint": "gulp lint",
-    "build": "gulp",
+    "build": "gulp && npm run build-storybook && npm run deploy-storybook",
     "precommit": "npm run lint",
     "prepush": "npm run build",
     "test": "jest",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -c .storybook -o dist/storybook"
+    "build-storybook": "build-storybook -c .storybook -o dist/storybook",
+    "deploy-storybook": "gulp storybook:deploy"
   },
   "devDependencies": {
     "@storybook/addon-options": "^3.2.3",
