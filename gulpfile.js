@@ -13,6 +13,7 @@ const imagesTask     = require('./gulp/images');
 const extrasTask     = require('./gulp/extras');
 const stylesTask     = require('./gulp/styles');
 const scriptsTask    = require('./gulp/scripts');
+const storybookTask  = require('./gulp/storybook');
 const lintStylesTask = require('./gulp/lintStyles');
 const lintScriptsTask = require('./gulp/lintScripts');
 
@@ -36,6 +37,8 @@ gulp.task('styles:prod', stylesTask(gulp, $, { config: config.sass.prod, reload:
 gulp.task('scripts:dev', scriptsTask(gulp, $, { config: config.webpack.dev, reload: true }));
 
 gulp.task('scripts:prod', scriptsTask(gulp, $, { config: config.webpack.prod, reload: true }));
+
+gulp.task('storybook:deploy', storybookTask(gulp, $, { config: config.webpack.prod }));
 
 gulp.task('serve:dev', serveTask(gulp, { env: 'dev' }));
 
