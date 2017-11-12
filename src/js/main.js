@@ -8,6 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import Home from './components/Home';
 import SampleComponent from './components/SampleComponent';
+import LoanForm from './components/LoanForm/LoanForm';
 
 const StoreInstance = Store();
 const history = syncHistoryWithStore(browserHistory, StoreInstance);
@@ -21,6 +22,7 @@ if (root) {
         <Route path="/" component={App}>
           <IndexRoute component={Home}/>
           <Route path="/sample-component" component={SampleComponent} />
+          <Route path="/loans" component={LoanForm} />
         </Route>
       </Router>
     </Provider>,
