@@ -6,3 +6,8 @@ body {
   -webkit-font-smoothing: antialiased; // apply font anti-aliasing
   text-rendering: optimizeLegibility; // firefox counts readability more than display speed
 }
+
+.contentArea {
+  display: flex;
+  justify-content: center;  
+}

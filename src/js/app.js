@@ -5,8 +5,7 @@ import Header from './components/global/Header';
 class App extends Component {
   render() {
     return (
-      <div id="app">
-        <Header />
+      <div id="app">        
         {this.props.children}
       </div>
     );

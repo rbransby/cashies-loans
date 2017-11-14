@@ -1,0 +1,15 @@
+{
+    "isRepeatCustomer": null,
+    "mobilePhone": "0409494785",  
+    "isMobileConfirmed": false,
+    "loanAmount": 1982, 
+    "title":"Mr",
+    "firstName":"Robert",
+    "middleName":"Wayne",
+    "lastName":"Bransby",
+    "customerDOB":"16/01/1982",  
+    "emailAddress":"rob.bransby@isobar.com",
+    "address":"41 Slater Court, Kardinya, WA, 6163",
+    "isAustralianResident":false,
+    "consentToContact":false    
+}

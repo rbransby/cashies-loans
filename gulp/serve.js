@@ -51,7 +51,8 @@ module.exports = (gulp, options) => {
           routes: {},
           // config for api proxy above
           middleware: catchAll
-        }
+        },
+        serveStatic: ['/data/**/**/*']
       },
       tunnel);
 

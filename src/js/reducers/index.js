@@ -2,12 +2,11 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 import SampleReducer from './SampleReducer';
-import LoanFormReducer from './LoanFormReducer';
+import PersonalFinanceReducer from './PersonalFinanceReducer';
 
 const rootReducer = combineReducers({
   SampleReducer,
-  LoanFormReducer,
-  // enhance store with routing
+  PersonalFinanceReducer,  // enhance store with routing
   routing: routerReducer
 });
 

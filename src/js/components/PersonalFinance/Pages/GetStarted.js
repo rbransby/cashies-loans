@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { assign } from 'lodash';
 
-import * as FormFlowActions from '../../../actions/LoanForm/FormFlowActions';
+import * as PersonalFinanceActions from '../../../actions/PersonalFinance/PersonalFinanceActions';
 
 class GetStarted extends Component {
   constructor(props) {
@@ -35,13 +35,13 @@ class GetStarted extends Component {
 
 function mapStateToProps(state/*, props*/) {
   return {
-    customer: state.LoanFormReducer.customer
+    customer: state.PersonalFinanceReducer
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(assign({}, FormFlowActions), dispatch)
+    actions: bindActionCreators(assign({}, PersonalFinanceActions), dispatch)
   };
 }
 
