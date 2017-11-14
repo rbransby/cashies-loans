@@ -24,7 +24,7 @@ class YourDetails extends Component {
       address: customer.address,
       isAustralianResident: customer.isAustralianResident,
       consentToContact: customer.consentToContact,
-    }      
+    };      
   }    
 
   handleInputChange(event){
@@ -33,7 +33,7 @@ class YourDetails extends Component {
     const name = target.name;
     this.setState({
       [name]: value
-    })
+    });
   }    
 
   yourDetailsSubmit() {
@@ -74,7 +74,7 @@ class YourDetails extends Component {
           <label htmlFor="your_details_emailaddress">Email Address</label>
           <input id="your_details_emailaddress" name="emailAddress" type="text" value={this.state.emailAddress} onChange={this.handleInputChange.bind(this)} />
           <label htmlFor="your_details_address">Address</label>
-          <input id="your_details_address" name="address" type="text" value={this.state.mobilePhone} onChange={this.handleInputChange.bind(this)} />
+          <input id="your_details_address" name="address" type="text" value={this.state.address} onChange={this.handleInputChange.bind(this)} />
         </div>
         <div>
           <button className="button" onClick={this.yourDetailsSubmit.bind(this)}>Next</button>    

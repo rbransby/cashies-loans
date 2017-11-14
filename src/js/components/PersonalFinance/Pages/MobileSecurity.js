@@ -27,7 +27,7 @@ class MobileSecurity extends Component {
     const name = target.name;
     this.setState({
       [name]: value
-    })
+    });
     
   }
 

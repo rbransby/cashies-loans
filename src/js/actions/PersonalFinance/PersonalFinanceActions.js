@@ -3,9 +3,9 @@ export const NEW_CUSTOMER = 'NEW_CUSTOMER';
 export const RETURNING_CUSTOMER = 'RETURNING_CUSTOMER';
 export const RETURNING_CUSTOMER_SUBMIT = 'RETURNING_CUSTOMER_SUBMIT';
 export const YOUR_LOAN_SUBMIT = 'YOUR_LOAN_SUBMIT';
-export const YOUR_DETAILS_SUBMIT = 'YOUR_DETAILS_SUBMIT'
-export const MOBILE_SECURITY_SUCCESS = 'MOBILE_SECURITY_SUCCESS'
-export const MOBILE_SECURITY_FAILED = 'MOBILE_SECURITY_FAILED'
+export const YOUR_DETAILS_SUBMIT = 'YOUR_DETAILS_SUBMIT';
+export const MOBILE_SECURITY_SUCCESS = 'MOBILE_SECURITY_SUCCESS';
+export const MOBILE_SECURITY_FAILED = 'MOBILE_SECURITY_FAILED';
 export const FETCH_USER_DETAILS_SUCCESS = 'FETCH_USER_DETAILS_SUCCESS';
 export const FETCH_USER_DETAILS_FAILED = 'FETCH_USER_DETAILS_FAILED';
 
@@ -44,7 +44,7 @@ export const yourLoanSubmit = (data) => {
 export const yourDetailsSubmit = (data) => {
   return {
     type: YOUR_LOAN_SUBMIT,
-    data: data
+    data: data,    
   };
 };
 
@@ -56,18 +56,18 @@ export const submitMobileSecurityCode = (code) => dispatch => {
       json.success ? dispatch(mobileSecuritySuccess()) : dispatch(mobileSecurityFailed());
     })
     .catch(error => dispatch(mobileSecurityFailed()));    
-}
+};
 
 export const mobileSecuritySuccess = () => {
   return {
     type: MOBILE_SECURITY_SUCCESS,    
-  }
+  };
 };
 
 export const mobileSecurityFailed = () => {
   return {
     type: MOBILE_SECURITY_FAILED
-  }  
+  };  
 };
 
 export const fetchUserDetails = (customerDOB, mobilePhone) => dispatch => {
@@ -78,17 +78,17 @@ export const fetchUserDetails = (customerDOB, mobilePhone) => dispatch => {
       dispatch(fetchUserDetailsSuccess(json));
     })
     .catch(error => dispatch(fetchUserDetailsFailed()));
-}
+};
 
 export const fetchUserDetailsSuccess = (customer) => {
   return {
     type: FETCH_USER_DETAILS_SUCCESS,
     data: customer
-  }
+  };
 };
   
 export const fetchUserDetailsFailed = () => {
   return {
     type: FETCH_USER_DETAILS_FAILED
-  }  
+  };  
 };

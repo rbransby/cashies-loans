@@ -22,8 +22,7 @@ const initialState = {
   emailAddress:'',
   address:'',
   isAustralianResident:false,
-  consentToContact:false,   
-  customerDOB:'',
+  consentToContact:false,     
 };
 
 const PersonalFinanceReducer = (state = initialState, action) => {
@@ -50,13 +49,13 @@ const PersonalFinanceReducer = (state = initialState, action) => {
         mobilePhone: action.data.mobilePhone,  
         customerDOB: action.data.customerDOB,
         isMobileConfirmed: false
-    });
+      });
 
     case YOUR_LOAN_SUBMIT:
       return assign({}, state, {        
         isRepeatCustomer: true,
         loanAmount: action.data.loanAmount,        
-    });
+      });
 
     case YOUR_DETAILS_SUBMIT:
       return assign({}, state, action.data);
@@ -67,17 +66,17 @@ const PersonalFinanceReducer = (state = initialState, action) => {
     case FETCH_USER_DETAILS_FAILED:
       return assign({}, state, {        
         // do something ?
-    });
+      });
 
     case MOBILE_SECURITY_SUCCESS:
       return assign({}, state, {        
         isMobileConfirmed: true
-    });
+      });
 
     case MOBILE_SECURITY_FAILED:
       return assign({}, state, {        
         isMobileConfirmed: false
-    });
+      });
 
     default:
       return state;
