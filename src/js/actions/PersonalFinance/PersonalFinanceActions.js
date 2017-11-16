@@ -3,11 +3,11 @@ export const NEW_CUSTOMER = 'NEW_CUSTOMER';
 export const RETURNING_CUSTOMER = 'RETURNING_CUSTOMER';
 export const RETURNING_CUSTOMER_SUBMIT = 'RETURNING_CUSTOMER_SUBMIT';
 export const YOUR_LOAN_SUBMIT = 'YOUR_LOAN_SUBMIT';
-export const YOUR_DETAILS_SUBMIT = 'YOUR_DETAILS_SUBMIT'
-export const MOBILE_SECURITY_SUCCESS = 'MOBILE_SECURITY_SUCCESS'
-export const MOBILE_SECURITY_FAILED = 'MOBILE_SECURITY_FAILED'
+export const YOUR_DETAILS_SUBMIT = 'YOUR_DETAILS_SUBMIT';
+export const MOBILE_SECURITY_FAILED = 'MOBILE_SECURITY_FAILED';
 export const FETCH_USER_DETAILS_SUCCESS = 'FETCH_USER_DETAILS_SUCCESS';
 export const FETCH_USER_DETAILS_FAILED = 'FETCH_USER_DETAILS_FAILED';
+export const YOUR_BANK_SUBMIT = 'YOUR_BANK_SUBMIT';
 
 export const sampleAction = (value) => {
   return {
@@ -43,52 +43,53 @@ export const yourLoanSubmit = (data) => {
 
 export const yourDetailsSubmit = (data) => {
   return {
-    type: YOUR_LOAN_SUBMIT,
+    type: YOUR_DETAILS_SUBMIT,
     data: data
   };
 };
 
-export const submitMobileSecurityCode = (code) => dispatch => {
+export const submitMobileSecurityCode = (code, customerDOB, mobilePhone) => dispatch => {
   let url = '/data/PersonalFinance/mobilesecurityresponse.json';
   return fetch(url)
     .then(response => response.json())
     .then(json => {
-      json.success ? dispatch(mobileSecuritySuccess()) : dispatch(mobileSecurityFailed());
+      json.success ? dispatch(fetchUserDetails(customerDOB, mobilePhone)) : dispatch(mobileSecurityFailed());
     })
-    .catch(error => dispatch(mobileSecurityFailed()));    
-}
-
-export const mobileSecuritySuccess = () => {
-  return {
-    type: MOBILE_SECURITY_SUCCESS,    
-  }
+    .catch(() => dispatch(mobileSecurityFailed()));    
 };
 
 export const mobileSecurityFailed = () => {
   return {
     type: MOBILE_SECURITY_FAILED
-  }  
+  };  
 };
 
 export const fetchUserDetails = (customerDOB, mobilePhone) => dispatch => {
-  let url = '/data/PersonalFinance/mobilesecurityresponse.json';
+  let url = `/data/PersonalFinance/returningcustomer.json?customerDOB=${customerDOB}&mobilePhone=${mobilePhone}`;
   return fetch(url)
     .then(response => response.json())
     .then(json => {
       dispatch(fetchUserDetailsSuccess(json));
     })
-    .catch(error => dispatch(fetchUserDetailsFailed()));
-}
+    .catch(() => dispatch(fetchUserDetailsFailed()));
+};
 
 export const fetchUserDetailsSuccess = (customer) => {
   return {
     type: FETCH_USER_DETAILS_SUCCESS,
     data: customer
-  }
+  };
 };
   
 export const fetchUserDetailsFailed = () => {
   return {
     type: FETCH_USER_DETAILS_FAILED
-  }  
+  };  
+};
+
+export const submitYourBank = (bankName) => {
+  return {
+    type: YOUR_BANK_SUBMIT,
+    data: bankName
+  };
 };

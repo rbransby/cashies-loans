@@ -8,6 +8,8 @@ import ReturningCustomer from './Pages/ReturningCustomer';
 import YourLoan from './Pages/YourLoan';
 import YourDetails from './Pages/YourDetails';
 import MobileSecurity from './Pages/MobileSecurity';
+import YourBank from './Pages/YourBank';
+import BankCredentials from './Pages/BankCredentials';
 
 import AppBar from 'material-ui/AppBar';
 
@@ -15,47 +17,28 @@ import * as PersonalFinanceActions from '../../actions/PersonalFinance/PersonalF
 
 class PersonalFinanceForm extends Component {
   constructor(props) {
-    super(props);    
+    super(props);        
   }
 
   signIn() {
     const { actions } = this.props;
-
     actions.signIn();
   }
 
   signOut() {
     const { actions } = this.props;
-
     actions.signOut();
-  }
+  }  
 
   render() {
     const { customer } = this.props;
-    let pageComponentToRender;
-
-    if (customer.isRepeatCustomer === null && customer.mobilePhone === ''){
-      pageComponentToRender = GetStarted;
-    }
-    else if (customer.loanAmount != '') {
-      pageComponentToRender = YourDetails;
-    }
-    else if (customer.mobilePhone != '' && !customer.isMobileConfirmed) {
-      pageComponentToRender = MobileSecurity;
-    }
-    else if (customer.mobilePhone != '' && customer.isMobileConfirmed) {
-      pageComponentToRender = YourLoan;
-    }
-    else if (customer.isRepeatCustomer) {
-      pageComponentToRender = ReturningCustomer;
-    }
-    else if (!customer.isRepeatCustomer) {
-      pageComponentToRender = YourLoan;
-    }
+    let pageComponentToRender = this._getPageToRender(customer.formPage);  
+    
+    let appBarTitle = this._buildAppBarTitle(customer.firstName, customer.loanAmount);
 
     return (
       <div>
-        <AppBar title="My Loan Application"/>
+        <AppBar title={appBarTitle}/>
         <div className="loanForm contentArea">        
           {
             React.createElement(pageComponentToRender)
@@ -63,6 +46,45 @@ class PersonalFinanceForm extends Component {
         </div>
       </div>
     );
+  }
+
+  _buildAppBarTitle(firstName, loanAmount)
+  {
+    let appBarTitle = '';
+    if (firstName != '' && firstName) {
+      appBarTitle = `${firstName}'s Loan Application`;
+    }
+    else {      
+      appBarTitle = 'My Loan Application';
+    }
+
+    if (loanAmount != '' && loanAmount) {
+      appBarTitle += ` ($${loanAmount})`;      
+    }
+
+    return appBarTitle;
+  }
+
+  _getPageToRender(stringPageToRender){
+    switch(stringPageToRender) {
+      case 'GetStarted':
+        return GetStarted;
+      case 'YourLoan':
+        return YourLoan;
+      case 'YourDetails':
+        return YourDetails;
+      case 'ReturningCustomer':
+        return ReturningCustomer;
+      case 'MobileSecurity':
+        return MobileSecurity;
+      case 'YourBank':
+        return YourBank;
+      case 'BankCredentials':
+        return BankCredentials;
+      default:
+        return GetStarted;
+
+    }
   }
 }
 

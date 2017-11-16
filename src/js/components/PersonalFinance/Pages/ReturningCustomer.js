@@ -12,7 +12,7 @@ class ReturningCustomer extends Component {
   }  
 
   returningCustomerSubmit() {
-    const { actions } = this.props;    
+    const { actions } = this.props;        
     actions.returningCustomerSubmit({customerDOB: this.state.customerDOB, mobilePhone: this.state.mobilePhone});
   }
 
@@ -27,8 +27,7 @@ class ReturningCustomer extends Component {
     const name = target.name;
     this.setState({
       [name]: value
-    })
-    
+    });
   }
 
   render() {    

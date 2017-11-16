@@ -5,14 +5,14 @@ import { SAMPLE_ACTION,
   RETURNING_CUSTOMER, RETURNING_CUSTOMER_SUBMIT, 
   YOUR_LOAN_SUBMIT, 
   YOUR_DETAILS_SUBMIT, 
-  MOBILE_SECURITY_SUCCESS, MOBILE_SECURITY_FAILED,
-  FETCH_USER_DETAILS_SUCCESS, FETCH_USER_DETAILS_FAILED } 
+  MOBILE_SECURITY_FAILED,
+  FETCH_USER_DETAILS_SUCCESS, FETCH_USER_DETAILS_FAILED,
+  YOUR_BANK_SUBMIT } 
   from '../actions/PersonalFinance/PersonalFinanceActions';
 
 const initialState = {  
   isRepeatCustomer: null,
-  mobilePhone: '',  
-  isMobileConfirmed: false,
+  mobilePhone: '',    
   loanAmount: '', 
   title:'',
   firstName:'',
@@ -22,8 +22,9 @@ const initialState = {
   emailAddress:'',
   address:'',
   isAustralianResident:false,
-  consentToContact:false,   
-  customerDOB:'',
+  consentToContact:false,     
+  bankName:'',
+  formPage:'GetStarted',
 };
 
 const PersonalFinanceReducer = (state = initialState, action) => {
@@ -35,13 +36,14 @@ const PersonalFinanceReducer = (state = initialState, action) => {
 
     case NEW_CUSTOMER:
       return assign({}, state, {        
-        isRepeatCustomer: false,
-        mobilePhone: -1        
+        isRepeatCustomer: false,        
+        formPage:'YourLoan'        
       });
 
     case RETURNING_CUSTOMER:
       return assign({}, state, {        
-        isRepeatCustomer: true        
+        isRepeatCustomer: true,
+        formPage:'ReturningCustomer'        
       });
 
     case RETURNING_CUSTOMER_SUBMIT:
@@ -49,35 +51,38 @@ const PersonalFinanceReducer = (state = initialState, action) => {
         isRepeatCustomer: true,
         mobilePhone: action.data.mobilePhone,  
         customerDOB: action.data.customerDOB,
-        isMobileConfirmed: false
-    });
+        isMobileConfirmed: false,
+        formPage:'MobileSecurity'
+      });
 
     case YOUR_LOAN_SUBMIT:
       return assign({}, state, {        
         isRepeatCustomer: true,
-        loanAmount: action.data.loanAmount,        
-    });
+        loanAmount: action.data.loanAmount,  
+        formPage:'YourDetails'      
+      });
 
-    case YOUR_DETAILS_SUBMIT:
-      return assign({}, state, action.data);
+    case YOUR_DETAILS_SUBMIT:      
+      return assign({}, state, { ...action.data, formPage: 'YourBank'});
 
-    case FETCH_USER_DETAILS_SUCCESS:
-      return assign({}, state, action.data);
+    case FETCH_USER_DETAILS_SUCCESS:      
+      return assign({}, state, {...action.data, isRepeatCustomer: true, formPage: 'YourDetails' });
 
     case FETCH_USER_DETAILS_FAILED:
       return assign({}, state, {        
         // do something ?
-    });
-
-    case MOBILE_SECURITY_SUCCESS:
-      return assign({}, state, {        
-        isMobileConfirmed: true
-    });
+      });    
 
     case MOBILE_SECURITY_FAILED:
       return assign({}, state, {        
-        isMobileConfirmed: false
-    });
+        formPage: 'MobileSecurity'
+      });
+
+    case YOUR_BANK_SUBMIT:
+      return assign({}, state, {  
+        bankName: action.data,      
+        formPage: 'BankCredentials'
+      });
 
     default:
       return state;

@@ -1,0 +1,41 @@
+{
+    "institution": {
+        "slug": "nab",
+        "name": "NAB",
+        "credentials": [
+            {
+                "name": "NAB ID",
+                "fieldID": "username",
+                "type": "TEXT",
+                "description": "",
+                "values": "",
+                "keyboardType": "number"
+            },
+            {
+                "name": "Password",
+                "fieldID": "password",
+                "type": "password",
+                "description": "",
+                "values": "",
+                "keyboardType": "default"
+            }
+        ],
+        "status": "We are currently experiencing issues in retrieving data from this institution. If you experience any problems, please try again later.",
+        "available": "1",
+        "searchable": "1",
+        "display": "1",
+        "searchVal": "nationalaustraliabanknab",
+        "region": "au",
+        "export_with_password": "0",
+        "estatements_supported": "1",
+        "transaction_listings_supported": "1",
+        "card_validation_supported": "1",
+        "requires_preload": "0",
+        "requires_mfa": "0",
+        "do_not_proxy": "0",
+        "updated_at": "2017-11-16 17:45:08",
+        "max_days": "540",
+        "get_address_supported": "1"
+    },
+    "user_token": "rCytN-L6Z28X8gB0GaztEQ"
+}

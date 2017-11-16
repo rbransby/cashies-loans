@@ -1,0 +1,41 @@
+{
+    "institution": {
+        "slug": "anz",
+        "name": "ANZ",
+        "credentials": [
+            {
+                "name": "Customer Registration Number",
+                "fieldID": "username",
+                "type": "TEXT",
+                "description": "",
+                "values": "",
+                "keyboardType": "number"
+            },
+            {
+                "name": "Password",
+                "fieldID": "password",
+                "type": "password",
+                "description": "",
+                "values": "",
+                "keyboardType": "default"
+            }
+        ],
+        "status": "",
+        "available": "1",
+        "searchable": "1",
+        "display": "1",
+        "searchVal": "anzaustralianewzealandaustraliaandnewzealandbankinggroup",
+        "region": "au",
+        "export_with_password": "0",
+        "estatements_supported": "1",
+        "transaction_listings_supported": "1",
+        "card_validation_supported": "1",
+        "requires_preload": "0",
+        "requires_mfa": "0",
+        "do_not_proxy": "0",
+        "updated_at": "2017-11-16 17:17:03",
+        "max_days": "365",
+        "get_address_supported": "1"
+    },
+    "user_token": "rCytN-L6Z28X8gB0GaztEQ"
+}

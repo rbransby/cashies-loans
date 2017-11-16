@@ -24,7 +24,7 @@ class YourDetails extends Component {
       address: customer.address,
       isAustralianResident: customer.isAustralianResident,
       consentToContact: customer.consentToContact,
-    }      
+    };      
   }    
 
   handleInputChange(event){
@@ -33,8 +33,12 @@ class YourDetails extends Component {
     const name = target.name;
     this.setState({
       [name]: value
-    })
+    });
   }    
+
+  handleSelectTitleInputChange(event, index, value) {
+    this.setState({title: value});
+  }
 
   yourDetailsSubmit() {
     const { actions } = this.props;    
@@ -49,9 +53,8 @@ class YourDetails extends Component {
         <div>
           <SelectField
             floatingLabelText="Title"
-            value={this.state.title}
-            name="title"
-            onChange={this.handleInputChange.bind(this)}
+            value={this.state.title}            
+            onChange={this.handleSelectTitleInputChange.bind(this)}
           >
             <MenuItem value={'Mr'} primaryText="Mr" />
             <MenuItem value={'Mrs'} primaryText="Mrs" />
@@ -74,7 +77,7 @@ class YourDetails extends Component {
           <label htmlFor="your_details_emailaddress">Email Address</label>
           <input id="your_details_emailaddress" name="emailAddress" type="text" value={this.state.emailAddress} onChange={this.handleInputChange.bind(this)} />
           <label htmlFor="your_details_address">Address</label>
-          <input id="your_details_address" name="address" type="text" value={this.state.mobilePhone} onChange={this.handleInputChange.bind(this)} />
+          <input id="your_details_address" name="address" type="text" value={this.state.address} onChange={this.handleInputChange.bind(this)} />
         </div>
         <div>
           <button className="button" onClick={this.yourDetailsSubmit.bind(this)}>Next</button>    
